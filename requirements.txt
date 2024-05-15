@@ -1,0 +1,10 @@
+requests
+pyrogram~=2.0.106
+tgcrypto
+python-dotenv
+pydantic-settings
+pykeyboard
+pydantic
+pyromod
+psycopg2~=2.9.9
+APScheduler~=3.10.4
