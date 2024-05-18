@@ -26,7 +26,7 @@ async def main():
         await initial(shared.database)
 
     bot = Client(
-        "ALGO_Moderator",
+        "TEST",
         api_id=shared.settings.API_ID,
         api_hash=shared.settings.API_HASH,
         bot_token=shared.settings.BOT_TOKEN,

@@ -9,12 +9,12 @@ create_table = "CREATE TABLE users (\n" \
                "    user_name VARCHAR(50),\n" \
                "    is_premium BOOLEAN,\n" \
                "    phone VARCHAR(20),\n" \
-               "    total_amount BIGINT,\n" \
-               "    purchase_count INTEGER,\n" \
+               "    total_amount BIGINT NOT NULL DEFAULT 0,\n" \
+               "    purchase_count INTEGER NOT NULL DEFAULT 0,\n" \
                "    rate INTEGER,\n" \
                "    review VARCHAR(255),\n" \
                "    referral_id BIGINT,\n" \
-               "    referrals_count INTEGER,\n" \
+               "    referrals_count INTEGER NOT NULL DEFAULT 0,\n" \
                "    bot_menu VARCHAR(50),\n" \
                "    update_by BIGINT,\n" \
                "    init_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n" \
@@ -23,9 +23,12 @@ create_table = "CREATE TABLE users (\n" \
                "    premium_status BOOLEAN\n" \
                ");"
 drop_table = "DROP TABLE users"
-insert_query = "INSERT INTO users (telegram_id, first_name, is_premium) VALUES ({!r}, {!r}, {!r});"
+insert_query = ("INSERT INTO users (telegram_id, first_name, is_premium, referral_id, referrals_count) "
+                "VALUES ({!r}, {!r}, {!r}, {!r}, 0);")
 update_bot_menu_query = "UPDATE users  SET bot_menu={!r} WHERE telegram_id={!r};"
 update_contact_query = "UPDATE users  SET phone={!r} WHERE telegram_id={!r};"
+update_referral_query = "UPDATE users  SET referral_id={!r}, bot_menu='' WHERE telegram_id={!r};"
+update_referral_count_query = "UPDATE users  SET referrals_count={!r} WHERE telegram_id={!r};"
 update_subscription_query = ("UPDATE users "
                              "SET update_by = {!r}, start_at = '{}', end_at = '{}', premium_status = True "
                              "WHERE telegram_id={!r};")
@@ -49,8 +52,8 @@ async def select_all(database):
     return database.select(select_all_query)
 
 
-async def inset_user(database, telegram_id, first_name, is_premium):
-    database.execute(insert_query.format(telegram_id, first_name, is_premium))
+async def inset_user(database, telegram_id, first_name, is_premium, referrals=0):
+    database.execute(insert_query.format(telegram_id, first_name, is_premium, referrals))
 
 
 async def update_bot_menu(database, client_id, value):
@@ -59,6 +62,14 @@ async def update_bot_menu(database, client_id, value):
 
 async def update_contact(database, client_id, value):
     database.execute(update_contact_query.format(value, client_id))
+
+
+async def update_referral(database, client_id, value):
+    database.execute(update_referral_query.format(value, client_id))
+
+
+async def update_referral_count(database, client_id, value):
+    database.execute(update_referral_count_query.format(value, client_id))
 
 
 async def update_subscription(database, client_id, update_by, start_at, end_at):

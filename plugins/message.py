@@ -28,18 +28,37 @@ async def private_message(_: Client, msg: Message):
             else:
                 return await msg.reply_text(f"Xatolik . . .")
             await user.update_bot_menu(shared.database, msg.from_user.id, "")
+            await _.unban_chat_member(const.CHANNEL, int(telegram_id))
             link = await _.create_chat_invite_link(const.CHANNEL, member_limit=1)
             await _.send_message(int(telegram_id), f"ESLATMA!!!!!\nushbu havola bir martalik \n{link.invite_link}")
-
             return await msg.reply_text(f"{telegram_id} ga {tariff}  muvofaqqiyatli aktivlashtirildi.")
         elif current_client.bot_menu == "ban":
             await user.update_subscription_end(shared.database, int(msg.text), msg.from_user.id, timer.get_current_time())
             await _.ban_chat_member(const.CHANNEL, int(msg.text))
             await user.update_bot_menu(shared.database, msg.from_user.id, "")
             return await msg.reply_text(f"{msg.text} muvofaqqiyatli diaktivlashtirildi.")
+        elif current_client.bot_menu == "ref":
+            try:
+                referral_id = int(msg.text)
+            except ValueError:
+                return await msg.reply_text("referral raqamdan iborat buladi!")
+            try:
+                referral = await user.get_user(shared.database, referral_id)
+            except TypeError:
+                return await msg.reply_text("noto'g'ro referral raqam!")
+            if referral_id != current_client.telegram_id:
+                await user.update_referral(shared.database, current_client.telegram_id, int(msg.text))
+                await user.update_referral_count(shared.database, referral.telegram_id,
+                                                 referral.referrals_count + 1)
+                return await msg.reply_text(f"Referral muvofaqqiyatli aktivlashtirildi.")
+            else:
+                return await msg.reply_text("O'zingizga o'zingiz referral bo'la olmaysiz!")
+        elif msg.text == "ref" and not current_client.referral_id:
+            try:
+                await user.update_bot_menu(shared.database, msg.from_user.id, "ref")
+            except Exception as err:
+                return await re_connection(_, msg, err)
+            else:
+                return await msg.reply_text(
+                    "Referal ID kiriting:")
         return await msg.reply_text("Kechirasiz, iltimosingizni tushunmadim. /start Buyruqini yuboring.")
-
-
-@Client.on_message(filters.text)
-async def private_message(_: Client, msg: Message):
-    return print(msg.chat.id)
