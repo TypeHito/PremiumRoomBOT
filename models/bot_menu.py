@@ -1,0 +1,12 @@
+class BotMenu:
+    start = "start"
+    my_id = "my_id"
+    language = "language"
+    contact = "contact"
+    ref = "ref"
+    join = "join"
+    ban = "ban"
+    demo = "demo"
+    algo7 = "algo7"
+    algo30 = "algo30"
+    delete = ""
