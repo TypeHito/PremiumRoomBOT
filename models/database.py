@@ -41,17 +41,10 @@ class DataBase:
         error = ""
         try:
             self.cur.execute(sql)
-        except psycopg2.errors.DuplicateDatabase as err:
-            error = err
-        except psycopg2.errors.DuplicateTable as err:
-            error = err
-        except psycopg2.errors.UndefinedTable as err:
-            error = err
-        except psycopg2.errors.UniqueViolation as err:
-            error = err
-        except psycopg2.OperationalError as err:
-            error = err
-        except TypeError as err:
+        except (psycopg2.errors.DuplicateDatabase, psycopg2.errors.DuplicateTable,
+                psycopg2.errors.UndefinedTable, psycopg2.errors.UniqueViolation,
+                psycopg2.OperationalError,
+                TypeError, AttributeError) as err:
             error = err
         else:
             self.conn.commit()

@@ -2,7 +2,7 @@ class User:
     def __init__(self, user_id, telegram_id, first_name, enter_name,
                  user_name, is_premium, phone, total_amount, purchase_count,
                  rate, review, referral_id, referrals_count, bot_menu, update_by,
-                 init_at, start_at, end_at, premium_status):
+                 init_at, start_at, end_at, premium_status, language):
         self.user_id = user_id
         self.telegram_id = telegram_id
         self.first_name = first_name
@@ -22,6 +22,7 @@ class User:
         self.start_at = start_at
         self.end_at = end_at
         self.premium_status = premium_status
+        self.language = language
 
     def __repr__(self):
         return f"""
@@ -44,6 +45,7 @@ init_at: {self.init_at}
 start_at: {self.start_at}
 end_at: {self.end_at}
 premium_status: {self.premium_status}
+premium_status: {self.language}
 """
 
     def user_status(self):

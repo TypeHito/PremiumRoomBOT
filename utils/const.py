@@ -5,21 +5,24 @@
 # db_password = "1523"
 db_host = "localhost"
 db_port = "5432"
-db_database_name = "premium_bot"
+db_database_name = "postgres"
+# db_database_name = "premium_bot"
 db_user = "postgres"
 db_password = ""
 
+APP_NAME = "Test"
+# APP_NAME = "PremiumRoomBOT"
 
 API_ID = 29158567  # me
 API_HASH = "4658fe88a5978ce5c572b2f8faa6049d"  # me
-BOT_TOKEN = "6489186261:AAFJ8BDvqtT6VqIOrlM1i676e_gWVVwrc0I" # @TypeHitoNoteBot:
+BOT_TOKEN = "6100275561:AAF4LDysmEXcBATHjJ5vaqxlFppQ8fxQWdc"  # @MotherInfoBot
 # BOT_TOKEN = "7139525433:AAH9Alb17aAgdfcgAB5o2nITRq4Qa1FvxD8"
 
 
-PROVIDER_TOKEN_TEST = "371317599:TEST:1715399177347"
+# PROVIDER_TOKEN_TEST = "371317599:TEST:1715399177347"
+PROVIDER_TOKEN_TEST = "371317599:TEST:1720024995600"  #MotherBOT
 PROVIDER_TOKEN_LIVE = ""
 
-app_name = "PremiumRoomBOT"
 
 ADMIN = 0
 # ADMINS = [5754619101, 7166188300]
@@ -28,4 +31,17 @@ ADMINS = [5754619101, 464018277, 7166188300]
 CHANNEL = -1001992276198
 
 
+LANGUAGES = {
+    "🇷🇺 Русский": "ru",
+    "🇺🇸 English": "en",
+    "🇺🇿 O'zbek": "uz"
+}
+
 invoice_photos = "https://appleinsider.ru/wp-content/uploads/2023/02/telegram_premium_logo_subscription-750x464.png"
+
+
+
+START_INFO = "Start Type"\
+             "\ni-init(database new open)"\
+             "\nr-reload(database will delete and new open !!!!!!)"\
+             "\nignore if you don't know: "

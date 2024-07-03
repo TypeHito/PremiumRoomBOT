@@ -1,64 +1,71 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from models import shared
+from models.bot_menu import BotMenu
 from methods import user
-from methods import timer
 from api import re_connection
-from utils import const
+from methods import message_handler
+from utils import lang
 
 
 @Client.on_message(filters.private & filters.text)
-async def private_message(_: Client, msg: Message):
+async def message_text(bot: Client, msg: Message):
     try:
-        current_client = await user.get_user(shared.database, msg.from_user.id)
+        current_user = await user.get_user(shared.database, msg.from_user.id)
     except Exception as err:
-        return re_connection(err)
+        return await re_connection(bot, msg, err)
     else:
-        if current_client.bot_menu == "join":
-            try:
-                telegram_id, tariff = msg.text.split(" ")
-            except ValueError:
-                return await msg.reply_text(f"Xatolik . . . (00000000 tariff) formatda kiriting")
-            if tariff in ["algo7", "demo"]:
-                await user.update_subscription(shared.database, int(telegram_id), current_client.telegram_id,
-                                               timer.get_current_time(), timer.get_end_time(7))
-            elif tariff == "algo30":
-                await user.update_subscription(shared.database, int(telegram_id), current_client.telegram_id,
-                                               timer.get_current_time(), timer.get_end_time(30))
-            else:
-                return await msg.reply_text(f"Xatolik . . .")
-            await user.update_bot_menu(shared.database, msg.from_user.id, "")
-            await _.unban_chat_member(const.CHANNEL, int(telegram_id))
-            link = await _.create_chat_invite_link(const.CHANNEL, member_limit=1)
-            await _.send_message(int(telegram_id), f"ESLATMA!!!!!\nushbu havola bir martalik \n{link.invite_link}")
-            return await msg.reply_text(f"{telegram_id} ga {tariff}  muvofaqqiyatli aktivlashtirildi.")
-        elif current_client.bot_menu == "ban":
-            await user.update_subscription_end(shared.database, int(msg.text), msg.from_user.id, timer.get_current_time())
-            await _.ban_chat_member(const.CHANNEL, int(msg.text))
-            await user.update_bot_menu(shared.database, msg.from_user.id, "")
-            return await msg.reply_text(f"{msg.text} muvofaqqiyatli diaktivlashtirildi.")
-        elif current_client.bot_menu == "ref":
-            try:
-                referral_id = int(msg.text)
-            except ValueError:
-                return await msg.reply_text("referral raqamdan iborat buladi!")
-            try:
-                referral = await user.get_user(shared.database, referral_id)
-            except TypeError:
-                return await msg.reply_text("noto'g'ro referral raqam!")
-            if referral_id != current_client.telegram_id:
-                await user.update_referral(shared.database, current_client.telegram_id, int(msg.text))
-                await user.update_referral_count(shared.database, referral.telegram_id,
-                                                 referral.referrals_count + 1)
-                return await msg.reply_text(f"Referral muvofaqqiyatli aktivlashtirildi.")
-            else:
-                return await msg.reply_text("O'zingizga o'zingiz referral bo'la olmaysiz!")
-        elif msg.text == "ref" and not current_client.referral_id:
-            try:
-                await user.update_bot_menu(shared.database, msg.from_user.id, "ref")
-            except Exception as err:
-                return await re_connection(_, msg, err)
-            else:
-                return await msg.reply_text(
-                    "Referal ID kiriting:")
-        return await msg.reply_text("Kechirasiz, iltimosingizni tushunmadim. /start Buyruqini yuboring.")
+        current_lang = user.get_current_language(current_user)
+
+        if not current_lang:
+            return await message_handler.update_language(current_user, current_lang, msg)
+
+        elif not current_user.phone:
+            return await message_handler.set_phone(current_user, current_lang, msg)
+
+        elif msg.text == BotMenu.ref:
+            return await message_handler.set_ref(current_lang, msg)
+
+        elif msg.text == current_lang["main_menu_1"]:
+            return await message_handler.bot_menu_1(current_user, current_lang, msg)
+
+        elif msg.text == current_lang["main_menu_2"]:
+            return await message_handler.bot_menu_2(current_user, current_lang, msg)
+
+        elif msg.text == current_lang["main_menu_3"]:
+            return await message_handler.bot_menu_3(current_lang, msg)
+
+        elif msg.text == current_lang["main_menu_4"]:
+            return await message_handler.bot_menu_4(current_lang, msg)
+
+        elif msg.text == current_lang["main_menu_5"]:
+            return await message_handler.bot_menu_5(current_user, msg)
+
+        elif msg.text in lang.no_lang["choice_language"]:
+            return await message_handler.update_language(current_user, current_lang, msg)
+
+        elif current_user.bot_menu == BotMenu.join:
+            return await message_handler.set_join(current_user, current_lang, bot, msg)
+
+        elif current_user.bot_menu == BotMenu.ban:
+            return await message_handler.set_ban(current_user, current_lang, bot, msg)
+
+        elif current_user.bot_menu == BotMenu.ref:
+            return await message_handler.update_ref(current_user, current_lang, msg)
+
+        elif current_user.bot_menu == BotMenu.language:
+            return await message_handler.update_language(current_user, current_lang, msg)
+
+    return await msg.reply_text(current_lang["warning_input"])
+
+
+@Client.on_message(filters.contact)
+async def save_start(bot: Client, msg: Message):
+    try:
+        current_user = await user.get_user(shared.database, msg.from_user.id)
+    except Exception as err:
+        return await re_connection(bot, msg, err)
+    else:
+        current_lang = user.get_current_language(current_user)
+
+    return await message_handler.update_phone(current_user, current_lang, msg)

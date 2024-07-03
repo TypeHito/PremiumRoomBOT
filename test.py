@@ -11,6 +11,7 @@ bot = Client(
         plugins=dict(root="plugins"),
     )
 
+
 async def job():
     await bot.send_message(const.ADMINS[0], "Hi!")
 

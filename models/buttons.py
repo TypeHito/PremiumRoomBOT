@@ -1,5 +1,6 @@
 from pyrogram.types import (ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup,
                             InlineKeyboardButton)
+from utils import const
 
 
 def request_contact_button(text):
@@ -17,12 +18,18 @@ def get_start(get, start):
     return InlineKeyboardMarkup([kb])
 
 
+def languages():
+    kb = [[KeyboardButton(lang)] for lang in const.LANGUAGES]
+    return ReplyKeyboardMarkup(kb, resize_keyboard=True, one_time_keyboard=False)
+
+
 def main_manu(strings, is_admin=False):
     kb = [
-        [KeyboardButton(strings["main_menu_1"]), KeyboardButton(strings["main_menu_2"])],
-        [KeyboardButton(strings["main_menu_3"])]
+        [KeyboardButton(strings["main_menu_1"])],
+        [KeyboardButton(strings["main_menu_2"]), KeyboardButton(strings["main_menu_3"])],
+        [KeyboardButton(strings["main_menu_4"])],
+        [KeyboardButton(strings["main_menu_5"])]
     ]
-    # kb['keyboard'].append([reply_keyboard_button(strings["send_number"], request_contact=True)])
     if is_admin:
         kb.append([KeyboardButton("GetList")])
     return ReplyKeyboardMarkup(kb, resize_keyboard=True, one_time_keyboard=False)

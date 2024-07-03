@@ -4,7 +4,6 @@ class Purchase:
         self.purchase_id = purchase_id
         self.telegram_id = telegram_id
         self.total_amount = total_amount
-        self.user_type = user_type
         self.status = status
         self.purchase_at = purchase_at
 

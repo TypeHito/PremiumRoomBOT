@@ -23,6 +23,7 @@ async def delete_database(connection_db):
 
 
 async def initial(connection_db):
+    connection_db.execute(f"CREATE DATABASE {const.db_database_name};")
     s = await init_database(connection_db)
     print("".join(s))
 
