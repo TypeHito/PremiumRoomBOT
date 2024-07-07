@@ -24,7 +24,7 @@ async def message_text(bot: Client, msg: Message):
             return await message_handler.set_phone(current_user, current_lang, msg)
 
         elif msg.text == BotMenu.ref:
-            return await message_handler.set_ref(current_lang, msg)
+            return await message_handler.update_ref(current_user, current_lang, msg)
 
         elif msg.text == current_lang["main_menu_1"]:
             return await message_handler.bot_menu_1(current_user, current_lang, msg)
@@ -33,7 +33,7 @@ async def message_text(bot: Client, msg: Message):
             return await message_handler.bot_menu_2(current_user, current_lang, msg)
 
         elif msg.text == current_lang["main_menu_3"]:
-            return await message_handler.bot_menu_3(current_lang, msg)
+            return await message_handler.bot_menu_3(current_user, current_lang, msg)
 
         elif msg.text == current_lang["main_menu_4"]:
             return await message_handler.bot_menu_4(current_lang, msg)

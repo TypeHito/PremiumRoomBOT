@@ -25,7 +25,7 @@ uz = {
 
 
     "set_ref": "Referral {} muvofaqqiyatli aktivlashtirildi.",
-    "set_language": "Til tanlandi!",
+    "set_language": " tanlandi!",
     "set_ban": "{} muvofaqqiyatli diaktivlashtirildi.",
 
 
@@ -39,6 +39,7 @@ uz = {
     "warning_link": "ESLATMA!!!!!\nushbu havola bir martalik \n{}",
 
     "warning_ref": "Referral raqam mavjud emas!",
+    "warning_have_ref": "Sizni referralingiz mavjud!",
     "warning_ref_number": "Referral raqamdan iborat buladi!",
     "warning_ref_self": "O'zingizga o'zingiz referral bo'la olmaysiz!",
 
@@ -61,7 +62,10 @@ uz = {
             "❗️Eslatma: chekni @Bobur_Mirzo97 ga yuborshni unitmag.",
 
 
-    "about_us": "Biz ALGO MM Jamoasi!"
+    "about_us": "Савдо эксперти сигналлари Market Masters трейдерлари "
+                "томонидан бериб борилади.\n@ALGO_Moderator_bot\n\n"
+                "Алока учун: @Bobur_Mirzo97 @Astrophysicuz"
+
 
 }
 

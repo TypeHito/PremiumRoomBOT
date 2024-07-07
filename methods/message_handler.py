@@ -7,9 +7,12 @@ from utils import const
 from utils import lang
 
 
-async def set_ref(current_lang, msg):
-    await user.update_bot_menu(shared.database, msg.from_user.id, BotMenu.ref)
-    return await msg.reply_text(current_lang["send_ref"])
+async def set_ref(current_user, current_lang, msg):
+    if current_user.referral_id:
+        await msg.reply_text(current_lang["warning_have_ref"])
+    else:
+        await user.update_bot_menu(shared.database, msg.from_user.id, BotMenu.ref)
+        return await msg.reply_text(current_lang["send_ref"])
 
 
 async def update_ref(current_user, current_lang, msg):
@@ -25,7 +28,7 @@ async def update_ref(current_user, current_lang, msg):
     if referral_id != current_user.telegram_id:
         await user.update_referral(shared.database, current_user.telegram_id, int(msg.text))
         await user.update_referral_count(shared.database, referral)
-        return await msg.reply_text(current_lang["set_ref"])
+        return await msg.reply_text(current_lang["set_ref"].format(referral_id))
     else:
         return await msg.reply_text(current_lang["warning_ref_self"])
 
@@ -55,7 +58,7 @@ async def update_language(current_user, current_lang, msg):
     if msg.text in const.LANGUAGES:
         await user.update_language(shared.database, current_user.telegram_id, const.LANGUAGES[msg.text])
         if current_user.phone:
-            return await msg.reply_text(current_lang["set_language"], reply_markup=buttons.main_manu(current_lang))
+            return await msg.reply_text(msg.text + current_lang["set_language"], reply_markup=buttons.main_manu(current_lang))
         else:
             await msg.reply_text(current_lang["set_language"])
             await set_phone(current_user, current_lang, msg)
@@ -98,8 +101,8 @@ async def bot_menu_2(current_user, current_lang, msg):
     return await msg.reply_text(current_lang["my_id"].format(current_user.first_name, current_user.telegram_id))
 
 
-async def bot_menu_3(current_lang, msg):
-    return await set_ref(current_lang, msg)
+async def bot_menu_3(current_user, current_lang, msg):
+    return await set_ref(current_user, current_lang, msg)
 
 
 async def bot_menu_4(current_lang, msg):
