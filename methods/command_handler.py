@@ -31,7 +31,7 @@ async def command_start(msg):
         await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.language)
         return await msg.reply_text(lang.no_lang["choice_language"], reply_markup=buttons.languages())
     elif not current_user.phone:
-        return await msg.reply_text(current_user.user_status(),
+        return await msg.reply_text(current_user.user_status(current_lang),
                                     reply_markup=buttons.request_contact_button(current_lang["send_contact"]))
     else:
         await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)

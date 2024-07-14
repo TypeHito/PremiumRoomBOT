@@ -42,7 +42,7 @@ async def message_text(bot: Client, msg: Message):
             return await message_handler.bot_menu_5(current_user, msg)
 
         elif msg.text in lang.no_lang["choice_language"]:
-            return await message_handler.update_language(current_user, current_lang, msg)
+            return await message_handler.update_language(current_user, msg)
 
         elif current_user.bot_menu == BotMenu.join:
             return await message_handler.set_join(current_user, current_lang, bot, msg)
@@ -54,7 +54,7 @@ async def message_text(bot: Client, msg: Message):
             return await message_handler.update_ref(current_user, current_lang, msg)
 
         elif current_user.bot_menu == BotMenu.language:
-            return await message_handler.update_language(current_user, current_lang, msg)
+            return await message_handler.update_language(current_user, msg)
 
     return await msg.reply_text(current_lang["warning_input"])
 

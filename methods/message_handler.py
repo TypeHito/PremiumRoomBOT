@@ -45,7 +45,7 @@ async def set_phone(current_user, current_lang, msg):
 
 async def update_phone(current_user, current_lang, msg):
     await user.update_contact(shared.database, current_user.telegram_id, msg.contact.phone_number)
-    return await msg.reply_text(current_user.user_status(), reply_markup=buttons.main_manu(current_lang))
+    return await msg.reply_text(current_user.user_status(current_lang), reply_markup=buttons.main_manu(current_lang))
 
 
 async def set_language(current_user, msg):
@@ -54,7 +54,7 @@ async def set_language(current_user, msg):
     return await msg.reply_text(lang.no_lang["choice_language"], reply_markup=buttons.languages())
 
 
-async def update_language(current_user, current_lang, msg):
+async def update_language(current_user, msg):
     if msg.text in const.LANGUAGES:
         new_lang = lang.langs[const.LANGUAGES[msg.text]]
         await user.update_language(shared.database, current_user.telegram_id, const.LANGUAGES[msg.text])
@@ -96,7 +96,7 @@ async def set_ban(current_user, current_lang, bot, msg):
 
 
 async def bot_menu_1(current_user, current_lang, msg):
-    return await msg.reply_text(current_user.user_status(), reply_markup=buttons.main_manu(current_lang))
+    return await msg.reply_text(current_user.user_status(current_lang), reply_markup=buttons.main_manu(current_lang))
 
 
 async def bot_menu_2(current_user, current_lang, msg):

@@ -73,8 +73,8 @@ uz = {
                  "👤 Ismi: {}\n"
                  "💼 Referral: {}\n"
                  "👥 Referralar soni: {}\n"
-                 "🗓 Obuna boshlangan: {}"
-                 "🗓 Obuna tugash vaqti: {}"
+                 "🗓 Obuna boshlangan: {}\n"
+                 "🗓 Obuna tugash vaqti: {}\n"
                  "⭐️ Obuna xolati: {}"
 }
 
@@ -143,8 +143,8 @@ ru = {
          "👤 Имя: {}\n"
          "💼 Реферал: {}\n"
          "👥 Количество рефералов: {}\n"
-         "🗓 Подписка началась: {}"
-         "🗓 Срок действия подписки истекает: {}"
+         "🗓 Подписка началась: {}\n"
+         "🗓 Срок действия подписки истекает: {}\n"
          "⭐️ Статус подписки: {}"
 
 }
@@ -213,8 +213,8 @@ en = {
          "👤 Name: {}\n"
          "💼 Referral: {}\n"
          "👥 Number of referrals: {}\n"
-         "🗓 Subscription started: {}"
-         "🗓 Subscription expires: {}"
+         "🗓 Subscription started: {}\n"
+         "🗓 Subscription expires: {}\n"
          "⭐️ Subscription Status: {}"
 }
 
