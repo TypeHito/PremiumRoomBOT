@@ -56,11 +56,13 @@ async def set_language(current_user, msg):
 
 async def update_language(current_user, current_lang, msg):
     if msg.text in const.LANGUAGES:
+        new_lang = lang.langs[const.LANGUAGES[msg.text]]
         await user.update_language(shared.database, current_user.telegram_id, const.LANGUAGES[msg.text])
         if current_user.phone:
-            return await msg.reply_text(msg.text + current_lang["set_language"], reply_markup=buttons.main_manu(current_lang))
+            return await msg.reply_text(msg.text + new_lang["set_language"],
+                                        reply_markup=buttons.main_manu(new_lang))
         else:
-            await msg.reply_text(current_lang["set_language"])
+            await msg.reply_text(current_lang["set_language"], reply_markup=buttons.main_manu(lang.langs[const.LANGUAGES[msg.text]]))
             await set_phone(current_user, current_lang, msg)
     else:
         return await msg.reply_text(lang.no_lang["warning_lang"], reply_markup=buttons.languages())

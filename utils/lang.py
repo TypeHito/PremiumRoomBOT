@@ -54,7 +54,8 @@ uz = {
 
     "my_id": "{} sizning ID  raqamingiz 🆔<code>{}</code>\n\n"
              "ALGO DEMO - 7 Kunlik demo tarifi - 15 000 so'm\n"
-             "ALGO 7 - 7 Kunlik  tarifi - 500 000 so'm\n"         "ALGO 30 - 30 Kunlik tarifi - 1 265 000 so'm\n\n"
+             "ALGO 7 - 7 Kunlik  tarifi - 500 000 so'm\n"        
+             "ALGO 30 - 30 Kunlik tarifi - 1 265 000 so'm\n\n"
              "Bobur Mirzo Khamdamov\n"
              "💳VISA: <code>4176550005522077</code>\n"
              "💳HUMO: <code>9860176606139127</code>\n"
@@ -69,4 +70,111 @@ uz = {
 
 }
 
-langs = {"ru": uz, "en": uz, "uz": uz}
+ru = {
+    "main_menu_1": "👤 Информация/Начало",
+    "main_menu_2": "📅 Тарифы",
+    "main_menu_3": "👥 Рефералы",
+
+    "main_menu_4": "🗓 О нас.",
+    "main_menu_5": "🌐 Язык",
+
+
+    "set_ref": "Реферал {} успешно активирован.",
+    "set_language": " выбрано!",
+    "set_ban": "{} успешно отключено.",
+
+
+    "send_contact": "📱Отправьте свой номер телефона",
+    "send_ref": "Введите идентификатор реферала:",
+
+
+
+    "warning_input": "Извините, я не понял ваш запрос. Отправьте команду /start.",
+
+    "warning_link": "ВНИМАНИЕ!!!!!\nэта ссылка одноразовая\n{}",
+
+    "warning_ref": "Реферальный номер недоступен!",
+    "warning_have_ref": "У вас есть реферал!",
+    "warning_ref_number": "Содержит реферальный номер!",
+    "warning_ref_self": "Вы не можете быть саморефералом!",
+
+    "warning_join": "Ошибка... Введите в формате (тариф 00000000)",
+    "warning_join_tariff": "Введен неверный тариф... введите в формате (тариф 00000000)",
+
+    "join": "Введите свой Telegram ID и тариф\n"
+    "демо - 7 дней\n"
+    "algo7 - 7 дней\n"
+    "algo30 – 30 дней:\n"
+    "Пример: 1234567890 алгоритм7",
+
+    "my_id": "{} — ваш идентификационный номер 🆔<code>{}</code>\n\n"
+    "Algo Demo ДЕМО - 7 дневный демо-тариф - 15 000 сум\n"
+    "AlGO 7 - 7 Дневной тариф - 500 000 сум\n"
+    "Algo 30 – 30 дней – 1 265 000 сум\n\n"
+    "Бабур Мирзо Хамдамов\n"
+    "💳 VISA: <code>4176550005522077</code>\n"
+    "💳 ХУМО: <code>9860176606139127</code>\n"
+    "💳 ХУМО: <code>9860350108599027</code>\n\n"
+    "❗️Примечание: не забудьте отправить чек @Bobur_Mirzo97.",
+
+
+    "about_us": "Торговые экспертные сигналы Мастера рынка предоставлен Трейдерами"
+    "\n@ALGO_Moderator_bot\n\n"
+    "Контакт: @Bobur_Mirzo97 @Astrophysicalcuz"
+
+
+}
+
+en = {
+ "main_menu_1": "👤 Info / Start",
+ "main_menu_2": "📅 Tariffs",
+ "main_menu_3": "👥 Referrals",
+
+ "main_menu_4": "🗓 About Us.",
+ "main_menu_5": "🌐 Language",
+
+
+ "set_ref": "Referral {} successfully activated.",
+ "set_language": " selected!",
+ "set_ban": "{} successfully disabled.",
+
+
+ "send_contact": "📱Send your phone number",
+ "send_ref": "Enter Referral ID:",
+
+
+
+ "warning_input": "Sorry, I didn't understand your request. Send the /start command.",
+
+ "warning_link": "WARNING!!!!!\this link is one-time \n{}",
+
+ "warning_ref": "Referral number not available!",
+ "warning_have_ref": "You have a referral!",
+ "warning_ref_number": "Contains a referral number!",
+ "warning_ref_self": "You cannot be a self-referral!",
+
+ "warning_join": "Error . . . Enter in format (00000000 tariff)",
+ "warning_join_tariff": "Invalid tariff entered . . . enter in format (00000000 tariff)",
+
+ "join": "Enter your Telegram ID and tariff\n"
+ "demo - 7 days\n"
+ "algo7 - 7 days\n"
+ "algo30 - 30 days:\n"
+ "Example: 1234567890 algo7",
+
+ "my_id": "{} is your ID number 🆔<code>{}</code>\n\n"
+ "ALGO DEMO - 7-day demo rate - 15,000 soums\n"
+ "ALGO 7 - 7 Day Tariff - 500,000 soums\n" "ALGO 30 - 30 Day Tariff - 1,265,000 soums\n\n"
+ "Babur Mirzo Khamdamov\n"
+ "💳 VISA: <code>4176550005522077</code>\n"
+ "💳 HUMO: <code>9860176606139127</code>\n"
+ "💳 HUMO: <code>9860350108599027</code>\n\n"
+ "❗️Note: Don't forget to send the check to @Bobur_Mirzo97.",
+
+
+ "about_us": "Trade Expert Signals Market Masters"
+ "provided by Traders.\n@ALGO_Moderator_bot\n\n"
+ "Contact: @Bobur_Mirzo97 @Astrophysicuz"
+}
+
+langs = {"ru": ru, "en": en, "uz": uz}
