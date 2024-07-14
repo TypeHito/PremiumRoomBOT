@@ -18,7 +18,7 @@ async def message_text(bot: Client, msg: Message):
         current_lang = user.get_current_language(current_user)
 
         if not current_lang:
-            return await message_handler.update_language(current_user, current_lang, msg)
+            return await message_handler.update_language(current_user, msg)
 
         elif not current_user.phone:
             return await message_handler.set_phone(current_user, current_lang, msg)

@@ -48,13 +48,10 @@ premium_status: {self.premium_status}
 premium_status: {self.language}
 """
 
-    def user_status(self):
-        return f"""#Info
-
-👤 Ismi:  {self.first_name}
-💼 Referral:  {self.referral_id}
-👥 Referralar soni:  {self.referrals_count}
-🗓 Obuna boshlangan:  {self.start_at}
-🗓 Obuna tugash vaqti:  {self.end_at}
-⭐️ Obuna xolati:  {self.premium_status}
-"""
+    def user_status(self, current_lang):
+        return current_lang["status_user"].format({self.first_name},
+                                                  {self.referral_id},
+                                                  {self.referrals_count},
+                                                  {self.start_at},
+                                                  {self.end_at},
+                                                  {self.premium_status})

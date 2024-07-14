@@ -62,8 +62,8 @@ async def update_language(current_user, current_lang, msg):
             return await msg.reply_text(msg.text + new_lang["set_language"],
                                         reply_markup=buttons.main_manu(new_lang))
         else:
-            await msg.reply_text(current_lang["set_language"], reply_markup=buttons.main_manu(lang.langs[const.LANGUAGES[msg.text]]))
-            await set_phone(current_user, current_lang, msg)
+            await msg.reply_text(new_lang["set_language"], reply_markup=buttons.main_manu(lang.langs[const.LANGUAGES[msg.text]]))
+            await set_phone(current_user, new_lang, msg)
     else:
         return await msg.reply_text(lang.no_lang["warning_lang"], reply_markup=buttons.languages())
 

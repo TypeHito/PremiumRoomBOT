@@ -35,7 +35,7 @@ async def command_start(msg):
                                     reply_markup=buttons.request_contact_button(current_lang["send_contact"]))
     else:
         await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
-        return await msg.reply_text(current_user.user_status(), reply_markup=buttons.main_manu(current_lang))
+        return await msg.reply_text(current_user.user_status(current_lang), reply_markup=buttons.main_manu(current_lang))
 
 
 async def my_id(current_user, current_lang, msg):
@@ -44,15 +44,15 @@ async def my_id(current_user, current_lang, msg):
 
 
 async def join(current_user, current_lang, bot, msg):
-        if current_user.telegram_id in const.ADMINS:
-            try:
-                await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.join)
-            except Exception as err:
-                return await re_connection(bot, msg, err)
-            else:
-                return await msg.reply_text(current_lang["join"])
+    if current_user.telegram_id in const.ADMINS:
+        try:
+            await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.join)
+        except Exception as err:
+            return await re_connection(bot, msg, err)
+        else:
+            return await msg.reply_text(current_lang["join"])
 
-        return await msg.reply_text(current_lang["incorrect_input"])
+    return await msg.reply_text(current_lang["warning_input"])
 
 
 async def ban(current_user, current_lang, bot, msg):
@@ -61,6 +61,6 @@ async def ban(current_user, current_lang, bot, msg):
             await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.ban)
         except Exception as err:
             return await re_connection(bot, msg, err)
-        # else:
-        #     return await msg.reply_text("Telegram ID raqamini kiriting yoki foydalanuvchini xabarini yuboring:")
-    return await msg.reply_text(current_lang["incorrect_input"])
+        else:
+            return await msg.reply_text(current_lang["ban"])
+    return await msg.reply_text(current_lang["warning_input"])

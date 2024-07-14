@@ -5,15 +5,8 @@ no_lang = {
                     "Неверный язык, пожалуйста, выберите одну из кнопок\n"
                     "Noto'g'ri til, iltimos, tugmalaridan birini tanlang",
 
-    "info_user": "Premium End. . ."
-                 "User Profile: [User {}](tg://user?id={})"
-                 "UserID: {} "
-                 "Start At: {} "
-                 "End At: {} ",
-
-
-
 }
+
 
 uz = {
     "main_menu_1": "👤 Info / Start",
@@ -52,6 +45,8 @@ uz = {
             "algo30 - 30 kun:\n"
             "Misol: 1234567890 algo7",
 
+    "ban": "Telegram ID raqamini kiriting",
+
     "my_id": "{} sizning ID  raqamingiz 🆔<code>{}</code>\n\n"
              "ALGO DEMO - 7 Kunlik demo tarifi - 15 000 so'm\n"
              "ALGO 7 - 7 Kunlik  tarifi - 500 000 so'm\n"        
@@ -65,10 +60,24 @@ uz = {
 
     "about_us": "Савдо эксперти сигналлари Market Masters трейдерлари "
                 "томонидан бериб борилади.\n@ALGO_Moderator_bot\n\n"
-                "Алока учун: @Bobur_Mirzo97 @Astrophysicuz"
+                "Алока учун: @Bobur_Mirzo97 @Astrophysicuz",
 
 
+    "info_user": "Premium End. . .\n"
+                 "User Profile: [User {}](tg://user?id={})\n"
+                 "UserID: {}\n"
+                 "Start At: {}\n"
+                 "End At: {}",
+
+    "status_user": "#info\n"
+                 "👤 Ismi: {}\n"
+                 "💼 Referral: {}\n"
+                 "👥 Referralar soni: {}\n"
+                 "🗓 Obuna boshlangan: {}"
+                 "🗓 Obuna tugash vaqti: {}"
+                 "⭐️ Obuna xolati: {}"
 }
+
 
 ru = {
     "main_menu_1": "👤 Информация/Начало",
@@ -107,6 +116,8 @@ ru = {
     "algo30 – 30 дней:\n"
     "Пример: 1234567890 алгоритм7",
 
+    "ban": "Введите  идентификационный номер Telegram",
+
     "my_id": "{} — ваш идентификационный номер 🆔<code>{}</code>\n\n"
     "Algo Demo ДЕМО - 7 дневный демо-тариф - 15 000 сум\n"
     "AlGO 7 - 7 Дневной тариф - 500 000 сум\n"
@@ -120,61 +131,91 @@ ru = {
 
     "about_us": "Торговые экспертные сигналы Мастера рынка предоставлен Трейдерами"
     "\n@ALGO_Moderator_bot\n\n"
-    "Контакт: @Bobur_Mirzo97 @Astrophysicalcuz"
+    "Контакт: @Bobur_Mirzo97 @Astrophysicalcuz",
 
+    "info_user": "Премиум-конец...\n"
+                 "Профиль пользователя: [Пользователь {}](tg://user?id={})\n"
+                 "Идентификатор пользователя: {}\n"
+                 "Начать с: {}\n"
+                 "Конец в: {}",
+
+    "status_user": "#info\n"
+         "👤 Имя: {}\n"
+         "💼 Реферал: {}\n"
+         "👥 Количество рефералов: {}\n"
+         "🗓 Подписка началась: {}"
+         "🗓 Срок действия подписки истекает: {}"
+         "⭐️ Статус подписки: {}"
 
 }
 
 en = {
- "main_menu_1": "👤 Info / Start",
- "main_menu_2": "📅 Tariffs",
- "main_menu_3": "👥 Referrals",
+    "main_menu_1": "👤 Info / Start",
+    "main_menu_2": "📅 Tariffs",
+    "main_menu_3": "👥 Referrals",
 
- "main_menu_4": "🗓 About Us.",
- "main_menu_5": "🌐 Language",
-
-
- "set_ref": "Referral {} successfully activated.",
- "set_language": " selected!",
- "set_ban": "{} successfully disabled.",
+    "main_menu_4": "🗓 About Us.",
+    "main_menu_5": "🌐 Language",
 
 
- "send_contact": "📱Send your phone number",
- "send_ref": "Enter Referral ID:",
+    "set_ref": "Referral {} successfully activated.",
+    "set_language": " selected!",
+    "set_ban": "{} successfully disabled.",
+
+
+    "send_contact": "📱Send your phone number",
+    "send_ref": "Enter Referral ID:",
 
 
 
- "warning_input": "Sorry, I didn't understand your request. Send the /start command.",
+    "warning_input": "Sorry, I didn't understand your request. Send the /start command.",
 
- "warning_link": "WARNING!!!!!\this link is one-time \n{}",
+    "warning_link": "WARNING!!!!!\this link is one-time \n{}",
 
- "warning_ref": "Referral number not available!",
- "warning_have_ref": "You have a referral!",
- "warning_ref_number": "Contains a referral number!",
- "warning_ref_self": "You cannot be a self-referral!",
+    "warning_ref": "Referral number not available!",
+    "warning_have_ref": "You have a referral!",
+    "warning_ref_number": "Contains a referral number!",
+    "warning_ref_self": "You cannot be a self-referral!",
 
- "warning_join": "Error . . . Enter in format (00000000 tariff)",
- "warning_join_tariff": "Invalid tariff entered . . . enter in format (00000000 tariff)",
+    "warning_join": "Error . . . Enter in format (00000000 tariff)",
+    "warning_join_tariff": "Invalid tariff entered . . . enter in format (00000000 tariff)",
 
- "join": "Enter your Telegram ID and tariff\n"
- "demo - 7 days\n"
- "algo7 - 7 days\n"
- "algo30 - 30 days:\n"
- "Example: 1234567890 algo7",
+    "join": "Enter your Telegram ID and tariff\n"
+        "demo - 7 days\n"
+        "algo7 - 7 days\n"
+        "algo30 - 30 days:\n"
+        "Example: 1234567890 algo7",
 
- "my_id": "{} is your ID number 🆔<code>{}</code>\n\n"
- "ALGO DEMO - 7-day demo rate - 15,000 soums\n"
- "ALGO 7 - 7 Day Tariff - 500,000 soums\n" "ALGO 30 - 30 Day Tariff - 1,265,000 soums\n\n"
- "Babur Mirzo Khamdamov\n"
- "💳 VISA: <code>4176550005522077</code>\n"
- "💳 HUMO: <code>9860176606139127</code>\n"
- "💳 HUMO: <code>9860350108599027</code>\n\n"
- "❗️Note: Don't forget to send the check to @Bobur_Mirzo97.",
+    "ban": "Enter Telegram ID number",
 
 
- "about_us": "Trade Expert Signals Market Masters"
- "provided by Traders.\n@ALGO_Moderator_bot\n\n"
- "Contact: @Bobur_Mirzo97 @Astrophysicuz"
+     "my_id": "{} is your ID number 🆔<code>{}</code>\n\n"
+         "ALGO DEMO - 7-day demo rate - 15,000 soums\n"
+         "ALGO 7 - 7 Day Tariff - 500,000 soums\n" "ALGO 30 - 30 Day Tariff - 1,265,000 soums\n\n"
+         "Babur Mirzo Khamdamov\n"
+         "💳 VISA: <code>4176550005522077</code>\n"
+         "💳 HUMO: <code>9860176606139127</code>\n"
+         "💳 HUMO: <code>9860350108599027</code>\n\n"
+         "❗️Note: Don't forget to send the check to @Bobur_Mirzo97.",
+
+
+    "about_us": "Trade Expert Signals Market Masters"
+        "provided by Traders.\n@ALGO_Moderator_bot\n\n"
+        "Contact: @Bobur_Mirzo97 @Astrophysicuz",
+
+    "info_user": "Premium End. . .\n"
+        "User Profile: [User {}](tg://user?id={})\n"
+        "UserID: {}\n"
+        "Start At: {}\n"
+        "End At: {}",
+
+    "status_user": "#info\n"
+         "👤 Name: {}\n"
+         "💼 Referral: {}\n"
+         "👥 Number of referrals: {}\n"
+         "🗓 Subscription started: {}"
+         "🗓 Subscription expires: {}"
+         "⭐️ Subscription Status: {}"
 }
 
 langs = {"ru": ru, "en": en, "uz": uz}

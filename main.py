@@ -39,9 +39,11 @@ async def main():
         else:
             for i in users:
                 for admin in const.ADMINS:
+                    print(lang.no_lang["info_user"].format(
+                                               str(i[2]), str(i[1]), str(i[1]),  str(i[16]), str(i[17])))
                     await bot.send_message(admin,
-                                           lang.no_lang["info_user"].format({i[2], i[1], i[1], i[16]}, i[17])
-                                           )
+                                           lang.no_lang["info_user"].format(
+                                               str(i[2]), str(i[1]), str(i[1]),  str(i[16]), str(i[17])))
                 await user.update_subscription_end(shared.database, i[1], 0, now)
                 await bot.ban_chat_member(const.CHANNEL, i[1])
 
