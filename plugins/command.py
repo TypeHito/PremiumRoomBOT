@@ -46,30 +46,8 @@ async def ban(bot: Client, msg: Message):
         await command_handler.ban(current_user, current_lang, bot, msg)
 
 
-@Client.on_message(filters.private & filters.command(BotMenu.demo))
-async def send_algo_demo(bot: Client, msg: Message):
-    try:
-        current_user = await user.get_user(shared.database, msg.from_user.id)
-    except Exception as err:
-        return await re_connection(bot, msg, err)
-    else:
-        current_lang = user.get_current_language(current_user)
-        await invoice_handler.init_invoice(bot, msg)
-
-
-@Client.on_message(filters.private & filters.command(BotMenu.algo7))
-async def send_algo_7(bot: Client, msg: Message):
-    try:
-        current_user = await user.get_user(shared.database, msg.from_user.id)
-    except Exception as err:
-        return await re_connection(bot, msg, err)
-    else:
-        current_lang = user.get_current_language(current_user)
-        await invoice_handler.init_invoice(bot, msg)
-
-
 @Client.on_message(filters.private & filters.command(BotMenu.algo30))
-async def send_algo_30(bot: Client, msg: Message):
+async def send_invoice(bot: Client, msg: Message):
     try:
         current_user = await user.get_user(shared.database, msg.from_user.id)
     except Exception as err:

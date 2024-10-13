@@ -5,6 +5,7 @@ from methods import user
 from models.bot_menu import BotMenu
 from utils import const
 from utils import lang
+from pyrogram.errors.exceptions.bad_request_400 import UserAdminInvalid
 
 
 async def set_ref(current_user, current_lang, msg):
@@ -73,9 +74,9 @@ async def set_join(current_user, current_lang, bot, msg):
         telegram_id, tariff = msg.text.split(" ")
     except ValueError:
         return await msg.reply_text(current_lang["warning_join"])
-    if tariff in ["algo7", "demo"]:
+    if tariff == "algo10":
         await user.update_subscription(shared.database, int(telegram_id), current_user.telegram_id,
-                                       timer.get_current_time(), timer.get_end_time(7))
+                                       timer.get_current_time(), timer.get_end_time(10))
     elif tariff == "algo30":
         await user.update_subscription(shared.database, int(telegram_id), current_user.telegram_id,
                                        timer.get_current_time(), timer.get_end_time(30))
@@ -90,8 +91,12 @@ async def set_join(current_user, current_lang, bot, msg):
 
 async def set_ban(current_user, current_lang, bot, msg):
     await user.update_subscription_end(shared.database, int(msg.text), current_user.telegram_id)
-    await bot.ban_chat_member(const.CHANNEL, int(msg.text))
-    await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
+    try:
+        await bot.ban_chat_member(const.CHANNEL, int(msg.text))
+    except UserAdminInvalid as err:
+        return await msg.reply_text(str(err))
+    else:
+        await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
     return await msg.reply_text(current_lang["set_ban"].format(msg.text))
 
 

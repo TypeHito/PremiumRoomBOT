@@ -1,3 +1,5 @@
+import datetime
+
 class User:
     def __init__(self, user_id, telegram_id, first_name, enter_name,
                  user_name, is_premium, phone, total_amount, purchase_count,
@@ -49,9 +51,13 @@ premium_status: {self.language}
 """
 
     def user_status(self, current_lang):
-        return current_lang["status_user"].format({self.first_name},
-                                                  {self.referral_id},
-                                                  {self.referrals_count},
-                                                  {self.start_at},
-                                                  {self.end_at},
-                                                  {self.premium_status})
+        print()
+
+        return current_lang["status_user"].format(
+            self.first_name,
+            self.referral_id,
+            self.referrals_count,
+            "✅" if self.premium_status else "🚫",
+            datetime.datetime.strftime(self.start_at, "%Y-%m-%d %H:%M"),
+            datetime.datetime.strftime(self.end_at, "%Y-%m-%d %H:%M"),
+        )

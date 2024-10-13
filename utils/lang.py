@@ -40,22 +40,16 @@ uz = {
     "warning_join_tariff": "Tarif notogri kiritildi . . . (00000000 tariff) formatda kiriting",
 
     "join": "Telegram ID raqamini va tarifni kirinig\n"
-            "demo - 7 kun\n"
-            "algo7 - 7 kun\n"
+            "algo10 - 10 kun\n"
             "algo30 - 30 kun:\n"
             "Misol: 1234567890 algo7",
 
     "ban": "Telegram ID raqamini kiriting",
 
     "my_id": "{} sizning ID  raqamingiz 🆔<code>{}</code>\n\n"
-             "ALGO DEMO - 7 Kunlik demo tarifi - 15 000 so'm\n"
-             "ALGO 7 - 7 Kunlik  tarifi - 500 000 so'm\n"        
-             "ALGO 30 - 30 Kunlik tarifi - 1 265 000 so'm\n\n"
-             "Bobur Mirzo Khamdamov\n"
-             "💳VISA: <code>4176550005522077</code>\n"
-             "💳HUMO: <code>9860176606139127</code>\n"
-            "💳HUMO: <code>9860350108599027</code>\n\n"
-            "❗️Eslatma: chekni @Bobur_Mirzo97 ga yuborshni unitmag.",
+             "ALGO 10 - 10 Kunlik tarifi - 10 USD\n"        
+             "ALGO 30 - 30 Kunlik tarifi - 30 USD\n\n"
+            "❗️Tolov uchun: @Bobur_Mirzo97",
 
 
     "about_us": "Савдо эксперти сигналлари Market Masters трейдерлари "
@@ -70,12 +64,13 @@ uz = {
                  "End At: {}",
 
     "status_user": "#info\n"
-                 "👤 Ismi: {}\n"
-                 "💼 Referral: {}\n"
-                 "👥 Referralar soni: {}\n"
-                 "🗓 Obuna boshlangan: {}\n"
-                 "🗓 Obuna tugash vaqti: {}\n"
-                 "⭐️ Obuna xolati: {}"
+                 "👤 Ismi: <b>{}</b>\n"
+                 "💼 Referral: <b>{}</b>\n"
+                 "👥 Referralar soni: <b>{}</b>\n"
+                 "⭐️ Obuna xolati: <code>{}</code>\n"
+                 "🗓 Obuna boshlangan: <b>{}</b>\n"
+                 "🗓 Obuna tugash vaqti: <b>{}</b>\n"
+
 }
 
 
@@ -111,22 +106,16 @@ ru = {
     "warning_join_tariff": "Введен неверный тариф... введите в формате (тариф 00000000)",
 
     "join": "Введите свой Telegram ID и тариф\n"
-    "демо - 7 дней\n"
-    "algo7 - 7 дней\n"
+    "algo10 - 10 дней\n"
     "algo30 – 30 дней:\n"
     "Пример: 1234567890 алгоритм7",
 
     "ban": "Введите  идентификационный номер Telegram",
 
     "my_id": "{} — ваш идентификационный номер 🆔<code>{}</code>\n\n"
-    "Algo Demo ДЕМО - 7 дневный демо-тариф - 15 000 сум\n"
-    "AlGO 7 - 7 Дневной тариф - 500 000 сум\n"
-    "Algo 30 – 30 дней – 1 265 000 сум\n\n"
-    "Бабур Мирзо Хамдамов\n"
-    "💳 VISA: <code>4176550005522077</code>\n"
-    "💳 ХУМО: <code>9860176606139127</code>\n"
-    "💳 ХУМО: <code>9860350108599027</code>\n\n"
-    "❗️Примечание: не забудьте отправить чек @Bobur_Mirzo97.",
+    "AlGO 10 - 10 Дневной тариф - 10 USD\n"
+    "Algo 30 – 30 Дневной тариф – 30 USD\n\n"
+    "❗Для оплаты: @Bobur_Mirzo97",
 
 
     "about_us": "Торговые экспертные сигналы Мастера рынка предоставлен Трейдерами"
@@ -181,8 +170,7 @@ en = {
     "warning_join_tariff": "Invalid tariff entered . . . enter in format (00000000 tariff)",
 
     "join": "Enter your Telegram ID and tariff\n"
-        "demo - 7 days\n"
-        "algo7 - 7 days\n"
+        "algo10 - 10 days\n"
         "algo30 - 30 days:\n"
         "Example: 1234567890 algo7",
 
@@ -190,13 +178,9 @@ en = {
 
 
      "my_id": "{} is your ID number 🆔<code>{}</code>\n\n"
-         "ALGO DEMO - 7-day demo rate - 15,000 soums\n"
-         "ALGO 7 - 7 Day Tariff - 500,000 soums\n" "ALGO 30 - 30 Day Tariff - 1,265,000 soums\n\n"
-         "Babur Mirzo Khamdamov\n"
-         "💳 VISA: <code>4176550005522077</code>\n"
-         "💳 HUMO: <code>9860176606139127</code>\n"
-         "💳 HUMO: <code>9860350108599027</code>\n\n"
-         "❗️Note: Don't forget to send the check to @Bobur_Mirzo97.",
+         "ALGO 10 - 10 Day tariff - 10 USD\n"
+         "ALGO 30 - 30 Day tariff - 30 USD\n\n"
+         "❗️For payments: @Bobur_Mirzo97",
 
 
     "about_us": "Trade Expert Signals Market Masters"

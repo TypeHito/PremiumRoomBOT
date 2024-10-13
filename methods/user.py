@@ -43,13 +43,19 @@ update_premium_status_query = "UPDATE users SET {}={!r} WHERE telegram_id = {!r}
 delete_query = "DELETE FROM users WHERE telegram_id={!r};"
 subscription_query = ("SELECT * FROM users "
                       "WHERE end_at < {!r} AND premium_status=True;")
+ids_query = ("SELECT telegram_id FROM users "
+                   "WHERE end_at < {!r} AND premium_status=True;")
+
 select_all_query = "SELECT * FROM users;"
 select_telegram_id_query = "SELECT * FROM users WHERE telegram_id = {!r} ;"
 
 
 async def review_subscription(database, current_data: str):
-    assert type(current_data) is str
     return database.select(subscription_query.format(current_data))
+
+
+async def review_ids(database, current_data: str):
+    return database.select(ids_query.format(current_data))
 
 
 async def select_all(database):

@@ -9,7 +9,7 @@ db_password = "1523"              # Server
 # db_database_name = "premium_bot"  # Dev
 # db_user = "postgres"                # Dev
 # db_password = ""                    # Dev
-#
+
 # APP_NAME = "Test"                   # Dev
 APP_NAME = "PremiumRoomBOT"       # Server
 
@@ -25,11 +25,14 @@ PROVIDER_TOKEN_LIVE = ""
 
 
 ADMIN = 0
-# ADMINS = [5754619101, 7166188300]
-ADMINS = [5754619101, 464018277, 7166188300]
-CHANNEL = -1002096204776  #ALGO CHANNEL
+# ADMINS = [5754619101 me, 464018277, 7166188300 #sardor, 7139525433 #botself]
+ADMINS = [5754619101, 464018277, 7166188300, 7139525433]
+CHANNEL = -1002175843444  #ALGO MM UZ CHANNEL
+# CHANNEL = -1002096204776  #ALGO CHANNEL
 # CHANNEL = -1001992276198
 
+
+interval = 60
 
 LANGUAGES = {
     "🇷🇺 Русский": "ru",
