@@ -58,6 +58,6 @@ premium_status: {self.language}
             self.referral_id,
             self.referrals_count,
             "✅" if self.premium_status else "🚫",
-            datetime.datetime.strftime(self.start_at, "%Y-%m-%d %H:%M"),
-            datetime.datetime.strftime(self.end_at, "%Y-%m-%d %H:%M"),
+            datetime.datetime.strftime(self.start_at, "%Y-%m-%d %H:%M") if self.start_at else "",
+            datetime.datetime.strftime(self.end_at, "%Y-%m-%d %H:%M") if self.start_at else ""
         )

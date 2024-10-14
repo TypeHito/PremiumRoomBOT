@@ -11,7 +11,7 @@ db_password = "1523"              # Server
 # db_password = ""                    # Dev
 
 # APP_NAME = "Test"                   # Dev
-APP_NAME = "PremiumRoomBOT"       # Server
+APP_NAME = "RoomBOT"       # Server
 
 API_ID = 29158567                                       # me
 API_HASH = "4658fe88a5978ce5c572b2f8faa6049d"           # me
@@ -26,13 +26,13 @@ PROVIDER_TOKEN_LIVE = ""
 
 ADMIN = 0
 # ADMINS = [5754619101 me, 464018277, 7166188300 #sardor, 7139525433 #botself]
-ADMINS = [5754619101, 464018277, 7166188300, 7139525433]
+ADMINS = [5754619101, 464018277, 7166188300, 7139525433] + [1029396309, 1467872498]
 CHANNEL = -1002175843444  #ALGO MM UZ CHANNEL
 # CHANNEL = -1002096204776  #ALGO CHANNEL
 # CHANNEL = -1001992276198
 
 
-interval = 60
+interval = 10
 
 LANGUAGES = {
     "🇷🇺 Русский": "ru",

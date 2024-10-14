@@ -34,34 +34,29 @@ async def main():
 
     async def review():
         now = timer.get_current_time()
-        if timer.start_at() < now:
-            members = []
+        members = []
+        try:
             async for member in bot.get_chat_members(const.CHANNEL):
                 members.append(member.user.id)
-
-            ids = await user.review_ids(shared.database, str(now))
-            to_ban = set(members) - set(ids)
-            for i in to_ban:
-                if i not in const.ADMINS:
-                    try:
-                        await bot.ban_chat_member(const.CHANNEL, i)
-                    except BadRequest as err:
-                        await bot.send_message(const.ADMINS[0], str(err))
-            try:
-                users = await user.review_subscription(shared.database, str(now))
-
-            except Exception as err:
-                await bot.send_message(const.ADMINS[0],  str(err))
-            else:
-                for i in users:
-                    await user.update_subscription_end(shared.database, i[1], 0, str(now))
-                    await bot.ban_chat_member(const.CHANNEL, i[1])
-        else:
-            for i in const.ADMINS:
+        except ValueError as err:
+            return await bot.send_message(const.ADMINS[0], str(err))
+        ids = await user.review_ids(shared.database, str(now))
+        to_ban = set(members) - set(ids)
+        for i in to_ban:
+            if i not in const.ADMINS:
                 try:
-                    await bot.send_message(i, timer.start_at()-now)
-                except UserIsBot:
-                    pass
+                    await bot.ban_chat_member(const.CHANNEL, i)
+                except BadRequest as err:
+                    await bot.send_message(const.ADMINS[0], str(err))
+        try:
+            users = await user.review_subscription(shared.database, str(now))
+
+        except Exception as err:
+            await bot.send_message(const.ADMINS[0],  str(err))
+        else:
+            for i in users:
+                await user.update_subscription_end(shared.database, i[1], 0, str(now))
+                await bot.ban_chat_member(const.CHANNEL, i[1])
 
     scheduler = AsyncIOScheduler()
     scheduler.add_job(review, "interval", seconds=const.interval)
