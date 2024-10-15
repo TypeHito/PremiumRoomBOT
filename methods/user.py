@@ -43,8 +43,8 @@ update_premium_status_query = "UPDATE users SET {}={!r} WHERE telegram_id = {!r}
 delete_query = "DELETE FROM users WHERE telegram_id={!r};"
 subscription_query = ("SELECT * FROM users "
                       "WHERE end_at < {!r} AND premium_status=True;")
-ids_query = ("SELECT telegram_id FROM users "
-                   "WHERE end_at < {!r} AND premium_status=True;")
+ids_query = ("SELECT DISTINCT telegram_id FROM users "
+             "WHERE premium_status=True;")
 
 select_all_query = "SELECT * FROM users;"
 select_telegram_id_query = "SELECT * FROM users WHERE telegram_id = {!r} ;"

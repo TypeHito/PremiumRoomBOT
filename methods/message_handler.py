@@ -5,7 +5,7 @@ from methods import user
 from models.bot_menu import BotMenu
 from utils import const
 from utils import lang
-from pyrogram.errors.exceptions.bad_request_400 import UserAdminInvalid
+from pyrogram.errors.exceptions.bad_request_400 import UserAdminInvalid, BadRequest
 
 
 async def set_ref(current_user, current_lang, msg):
@@ -83,7 +83,10 @@ async def set_join(current_user, current_lang, bot, msg):
     else:
         return await msg.reply_text(current_lang["warning_join_tariff"])
     await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
-    await bot.unban_chat_member(const.CHANNEL, int(telegram_id))
+    try:
+        await bot.unban_chat_member(const.CHANNEL, int(telegram_id))
+    except BadRequest as err:
+        return await msg.reply_text(str(err))
     link = await bot.create_chat_invite_link(const.CHANNEL, member_limit=1)
     await bot.send_message(int(telegram_id), current_lang['warning_link'].format(link.invite_link))
     return await msg.reply_text(f"{telegram_id} ga {tariff}  muvofaqqiyatli aktivlashtirildi.")

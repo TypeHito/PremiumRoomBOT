@@ -41,7 +41,7 @@ async def main():
         except ValueError as err:
             return await bot.send_message(const.ADMINS[0], str(err))
         ids = await user.review_ids(shared.database, str(now))
-        to_ban = set(members) - set(ids)
+        to_ban = set(members) - set(list(sum(ids,())))
         for i in to_ban:
             if i not in const.ADMINS:
                 try:

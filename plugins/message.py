@@ -6,7 +6,7 @@ from methods import user
 from api import re_connection
 from methods import message_handler
 from utils import lang
-
+from pyrogram.errors.exceptions.bad_request_400 import UserIsBot
 
 @Client.on_message(filters.private & filters.text)
 async def message_text(bot: Client, msg: Message):
@@ -45,7 +45,10 @@ async def message_text(bot: Client, msg: Message):
             return await message_handler.update_language(current_user, msg)
 
         elif current_user.bot_menu == BotMenu.join:
-            return await message_handler.set_join(current_user, current_lang, bot, msg)
+            try:
+                return await message_handler.set_join(current_user, current_lang, bot, msg)
+            except UserIsBot as err:
+                return await msg.reply_text(str(err))
 
         elif current_user.bot_menu == BotMenu.ban:
             return await message_handler.set_ban(current_user, current_lang, bot, msg)
