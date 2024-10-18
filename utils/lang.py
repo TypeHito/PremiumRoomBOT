@@ -5,6 +5,19 @@ no_lang = {
                     "Неверный язык, пожалуйста, выберите одну из кнопок\n"
                     "Noto'g'ri til, iltimos, tugmalaridan birini tanlang",
 
+    "send_start_info": "Algo signal kanalga qo’shilish uchun, quyidagilarni bajargan bo’lishiz kerak:\n"
+                       "1. https://www.forex4you.com/?affid=wwwpft1 ro’yxatdan o’tib, verifikatsiyadanxan o’tishiz kerak.\n"
+                       "2. Agar kiritayotgan investitsiyangiz 10.000$ kam bo’lsa, Forex4you brokeridan Cent pro Mt4 xisobiga kamida 100$ deposit qipgan bo’lishiz kerak. Centda 10.000cent bo’ladi.\n"
+                       "3. Adminga Brokerdan id raqamini yoki ochilgan xisobni raqamini jo’natishingiz kerak.\n\n\n"
+                       "Yuqoridagi barcha punktlarni bajarganizfan so’ng, @ALGO_Moderator_bot dan to’lov uchun rezkivitlarni olsangiz bo’ladi.",
+    "send_start_channel": "ALGO signals MM qanday kanal?\n\n"
+                          "1) Market Masters treyderlari tomonidan ishlab chiqilgan yarim avtomat savdo experti xisoblanadi.\n"
+                          "2) Signallar Toshkent vaqti bilan soat 11:00 dan 00:00 gacha yuboriladi.\n"
+                          "3) Birortaxam zararda yopilga oy yo’q.\n"
+                          "4) 100% Take profitlar o’linishi kafolati.\n"
+                          "5) Risk va money management sistemasi.\n\n"
+                          "📉📈 Signal effektivligi bir-qancha strategiyalar birlashmasi, texnik va fundamental tahlilarga asoslanib beriladi.\n",
+
 }
 
 
@@ -26,7 +39,6 @@ uz = {
     "send_ref": "Referal ID kiriting:",
 
 
-
     "warning_input": "Kechirasiz, iltimosingizni tushunmadim. /start Buyruqini yuboring.",
 
     "warning_link": "ESLATMA!!!!!\nushbu havola bir martalik \n{}",
@@ -42,14 +54,15 @@ uz = {
     "join": "Telegram ID raqamini va tarifni kirinig\n"
             "algo10 - 10 kun\n"
             "algo30 - 30 kun:\n"
-            "Misol: 1234567890 algo7",
+            "Misol: 1234567890 algo10",
 
     "ban": "Telegram ID raqamini kiriting",
 
     "my_id": "{} sizning ID  raqamingiz 🆔<code>{}</code>\n\n"
-             "ALGO 10 - 10 Kunlik tarifi - 10 USD\n"        
-             "ALGO 30 - 30 Kunlik tarifi - 30 USD\n\n"
-            "❗️Tolov uchun: @Bobur_Mirzo97",
+             "ALGO 10 - 10 Kunlik tarifi - 10 USDT(Demo 1 martalik)\n"        
+             "F4U 30 - 30 Kunlik tarifi - 30 USDT(Forex4you)\n"
+             "ALGO 30 - 30 Kunlik tarifi - 200 USDT\n\n"
+             "❗️Tolov uchun: @Bobur_Mirzo97",
 
 
     "about_us": "Савдо эксперти сигналлари Market Masters трейдерлари "
