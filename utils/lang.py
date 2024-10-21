@@ -59,8 +59,8 @@ uz = {
     "ban": "Telegram ID raqamini kiriting",
 
     "my_id": "{} sizning ID  raqamingiz 🆔<code>{}</code>\n\n"
-             "ALGO 10 - 10 Kunlik tarifi - 10 USDT(Demo 1 martalik)\n"        
-             "F4U 30 - 30 Kunlik tarifi - 30 USDT(Forex4you)\n"
+             "ALGO 10 - 10 Kunlik tarifi - 10 USDT (Demo 1 martalik)\n"        
+             "F4U 30 - 30 Kunlik tarifi - 30 USDT (Forex4you)\n"
              "ALGO 30 - 30 Kunlik tarifi - 200 USDT\n\n"
              "❗️Tolov uchun: @Bobur_Mirzo97",
 
@@ -88,131 +88,132 @@ uz = {
 
 
 ru = {
-    "main_menu_1": "👤 Информация/Начало",
-    "main_menu_2": "📅 Тарифы",
-    "main_menu_3": "👥 Рефералы",
+ "main_menu_1": "👤 Информация/Начало",
+ "main_menu_2": "📅 Тарифы",
+ "main_menu_3": "👥 Рефералы",
 
-    "main_menu_4": "🗓 О нас.",
-    "main_menu_5": "🌐 Язык",
-
-
-    "set_ref": "Реферал {} успешно активирован.",
-    "set_language": " выбрано!",
-    "set_ban": "{} успешно отключено.",
+ "main_menu_4": "🗓 О нас.",
+ "main_menu_5": "🌐 Язык",
 
 
-    "send_contact": "📱Отправьте свой номер телефона",
-    "send_ref": "Введите идентификатор реферала:",
+ "set_ref": "Реферал {} успешно активирован.",
+ "set_language": "выбрано!",
+ "set_ban": "{} успешно отключено.",
 
 
-
-    "warning_input": "Извините, я не понял ваш запрос. Отправьте команду /start.",
-
-    "warning_link": "ВНИМАНИЕ!!!!!\nэта ссылка одноразовая\n{}",
-
-    "warning_ref": "Реферальный номер недоступен!",
-    "warning_have_ref": "У вас есть реферал!",
-    "warning_ref_number": "Содержит реферальный номер!",
-    "warning_ref_self": "Вы не можете быть саморефералом!",
-
-    "warning_join": "Ошибка... Введите в формате (тариф 00000000)",
-    "warning_join_tariff": "Введен неверный тариф... введите в формате (тариф 00000000)",
-
-    "join": "Введите свой Telegram ID и тариф\n"
-    "algo10 - 10 дней\n"
-    "algo30 – 30 дней:\n"
-    "Пример: 1234567890 алгоритм7",
-
-    "ban": "Введите  идентификационный номер Telegram",
-
-    "my_id": "{} — ваш идентификационный номер 🆔<code>{}</code>\n\n"
-    "AlGO 10 - 10 Дневной тариф - 10 USD\n"
-    "Algo 30 – 30 Дневной тариф – 30 USD\n\n"
-    "❗Для оплаты: @Bobur_Mirzo97",
+ "send_contact": "📱Отправьте свой номер телефона",
+ "send_ref": "Введите идентификатор реферала:",
 
 
-    "about_us": "Торговые экспертные сигналы Мастера рынка предоставлен Трейдерами"
-    "\n@ALGO_Moderator_bot\n\n"
-    "Контакт: @Bobur_Mirzo97 @Astrophysicalcuz",
+ "warning_input": "Извините, я не понял ваш запрос. Отправьте команду /start.",
 
-    "info_user": "Премиум-конец...\n"
-                 "Профиль пользователя: [Пользователь {}](tg://user?id={})\n"
-                 "Идентификатор пользователя: {}\n"
-                 "Начать с: {}\n"
-                 "Конец в: {}",
+ "warning_link": "ВНИМАНИЕ!!!!!\эта ссылка одноразовая\n{}",
 
-    "status_user": "#info\n"
-         "👤 Имя: {}\n"
-         "💼 Реферал: {}\n"
-         "👥 Количество рефералов: {}\n"
-         "🗓 Подписка началась: {}\n"
-         "🗓 Срок действия подписки истекает: {}\n"
-         "⭐️ Статус подписки: {}"
+ "warning_ref": "Реферальный номер недоступен!",
+ "warning_have_ref": "У вас есть реферал!",
+ "warning_ref_number": "Содержит реферальный номер!",
+ "warning_ref_self": "Вы не можете быть саморефералом!",
 
+ "warning_join": "Ошибка... Введите в формате (тариф 00000000)",
+ "warning_join_tariff": "Введен неверный тариф... Введите в формате (тариф 00000000)",
+
+ "join": "Введите Telegram ID и тариф\n"
+ "алго10 – 10 дней\n"
+ "algo30 – 30 дней:\n"
+ "Пример: 1234567890 алгоритм10",
+
+ "ban": "Введите идентификатор Telegram",
+
+ "my_id": "{} — ваш идентификационный номер 🆔<code>{}</code>\n\n"
+ "Ставка ALGO 10 – 10 дней — 10 USDT (1 демо-версия)\n"
+ "Ставка F4U 30 – 30 дней — 30 USDT (Forex4you)\n"
+ "Ставка ALGO 30 – 30 дней — 200 USDT\n\n"
+ "❗️Для выкупа: @Bobur_Mirzo97",
+
+
+ "about_us": "Торговые экспертные сигналы Мастера рынка Трейдеры"
+ "предоставлен.\n@ALGO_Moderator_bot\n\n"
+ "Контакт: @Bobur_Mirzo97 @Astrophysicalcuz",
+
+
+ "info_user": "Премиум-конец...\n"
+ "Профиль пользователя: [Пользователь {}](tg://user?id={})\n"
+ "Идентификатор пользователя: {}\n"
+ "Начать с: {}\n"
+ "Конец в: {}",
+
+ "status_user": "#info\n"
+ "👤 Имя: <b>{}</b>\n"
+ "💼 Реферал: <b>{}</b>\n"
+ "👥 Количество рефералов: <b>{}</b>\n"
+ "⭐️ Статус подписки: <code>{}</code>\n"
+ "🗓 Подписка началась: <b>{}</b>\n"
+ "🗓 Срок действия подписки истекает: <b>{}</b>\n"
 }
 
 en = {
-    "main_menu_1": "👤 Info / Start",
-    "main_menu_2": "📅 Tariffs",
-    "main_menu_3": "👥 Referrals",
+ "main_menu_1": "👤 Info / Start",
+ "main_menu_2": "📅 Tariffs",
+ "main_menu_3": "👥 Referrals",
 
-    "main_menu_4": "🗓 About Us.",
-    "main_menu_5": "🌐 Language",
-
-
-    "set_ref": "Referral {} successfully activated.",
-    "set_language": " selected!",
-    "set_ban": "{} successfully disabled.",
+ "main_menu_4": "🗓 About Us.",
+ "main_menu_5": "🌐 Language",
 
 
-    "send_contact": "📱Send your phone number",
-    "send_ref": "Enter Referral ID:",
+ "set_ref": "Referral {} successfully activated.",
+ "set_language": " selected!",
+ "set_ban": "{} successfully disabled.",
 
 
-
-    "warning_input": "Sorry, I didn't understand your request. Send the /start command.",
-
-    "warning_link": "WARNING!!!!!\this link is one-time \n{}",
-
-    "warning_ref": "Referral number not available!",
-    "warning_have_ref": "You have a referral!",
-    "warning_ref_number": "Contains a referral number!",
-    "warning_ref_self": "You cannot be a self-referral!",
-
-    "warning_join": "Error . . . Enter in format (00000000 tariff)",
-    "warning_join_tariff": "Invalid tariff entered . . . enter in format (00000000 tariff)",
-
-    "join": "Enter your Telegram ID and tariff\n"
-        "algo10 - 10 days\n"
-        "algo30 - 30 days:\n"
-        "Example: 1234567890 algo7",
-
-    "ban": "Enter Telegram ID number",
+ "send_contact": "📱Send your phone number",
+ "send_ref": "Enter Referral ID:",
 
 
-     "my_id": "{} is your ID number 🆔<code>{}</code>\n\n"
-         "ALGO 10 - 10 Day tariff - 10 USD\n"
-         "ALGO 30 - 30 Day tariff - 30 USD\n\n"
-         "❗️For payments: @Bobur_Mirzo97",
+ "warning_input": "Sorry, I didn't understand your request. Send the /start command.",
+
+ "warning_link": "WARNING!!!!!\this link is one-time \n{}",
+
+ "warning_ref": "Referral number not available!",
+ "warning_have_ref": "You have a referral!",
+ "warning_ref_number": "Contains a referral number!",
+ "warning_ref_self": "You cannot be a self-referral!",
+
+ "warning_join": "Error . . . Enter in format (00000000 tariff)",
+ "warning_join_tariff": "Invalid tariff entered . . . Enter in format (00000000 tariff)",
+
+ "join": "Enter Telegram ID and tariff\n"
+ "algo10 - 10 days\n"
+ "algo30 - 30 days:\n"
+ "Example: 1234567890 algo10",
+
+ "ban": "Enter Telegram ID",
+
+ "my_id": "{} is your ID number 🆔<code>{}</code>\n\n"
+ "ALGO 10 - 10 Day rate - 10 USDT (Demo 1 time)\n"
+ "F4U 30 - 30 Day rate - 30 USDT (Forex4you)\n"
+ "ALGO 30 - 30 Day rate - 200 USDT\n\n"
+ "❗️For ransom: @Bobur_Mirzo97",
 
 
-    "about_us": "Trade Expert Signals Market Masters"
-        "provided by Traders.\n@ALGO_Moderator_bot\n\n"
-        "Contact: @Bobur_Mirzo97 @Astrophysicuz",
+ "about_us": "Trade Expert Signals Market Masters Traders "
+ "provided by.\n@ALGO_Moderator_bot\n\n"
+ "Contact: @Bobur_Mirzo97 @Astrophysicuz",
 
-    "info_user": "Premium End. . .\n"
-        "User Profile: [User {}](tg://user?id={})\n"
-        "UserID: {}\n"
-        "Start At: {}\n"
-        "End At: {}",
 
-    "status_user": "#info\n"
-         "👤 Name: {}\n"
-         "💼 Referral: {}\n"
-         "👥 Number of referrals: {}\n"
-         "🗓 Subscription started: {}\n"
-         "🗓 Subscription expires: {}\n"
-         "⭐️ Subscription Status: {}"
+ "info_user": "Premium End. . .\n"
+ "User Profile: [User {}](tg://user?id={})\n"
+ "UserID: {}\n"
+ "Start At: {}\n"
+ "End At: {}",
+
+ "status_user": "#info\n"
+ "👤 Name: <b>{}</b>\n"
+ "💼 Referral: <b>{}</b>\n"
+ "👥 Number of referrals: <b>{}</b>\n"
+ "⭐️ Subscription status: <code>{}</code>\n"
+ "🗓 Subscription started: <b>{}</b>\n"
+ "🗓 Subscription expires: <b>{}</b>\n"
+
 }
 
 langs = {"ru": ru, "en": en, "uz": uz}
