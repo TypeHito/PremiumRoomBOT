@@ -26,6 +26,7 @@ def languages():
 def main_manu(strings, is_admin=False):
     kb = [
         [KeyboardButton(strings["main_menu_1"])],
+        [KeyboardButton(strings["main_menu_6"])],
         [KeyboardButton(strings["main_menu_2"]), KeyboardButton(strings["main_menu_3"])],
         [KeyboardButton(strings["main_menu_4"])],
         [KeyboardButton(strings["main_menu_5"])]

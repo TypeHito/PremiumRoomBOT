@@ -10,6 +10,7 @@ no_lang = {
                        "2. Agar kiritayotgan investitsiyangiz 10.000$ kam bo’lsa, Forex4you brokeridan Cent pro Mt4 xisobiga kamida 100$ deposit qipgan bo’lishiz kerak. Centda 10.000cent bo’ladi.\n"
                        "3. Adminga Brokerdan id raqamini yoki ochilgan xisobni raqamini jo’natishingiz kerak.\n\n\n"
                        "Yuqoridagi barcha punktlarni bajarganizfan so’ng, @ALGO_Moderator_bot dan to’lov uchun rezkivitlarni olsangiz bo’ladi.",
+
     "send_start_channel": "ALGO signals MM qanday kanal?\n\n"
                           "1) Market Masters treyderlari tomonidan ishlab chiqilgan yarim avtomat savdo experti xisoblanadi.\n"
                           "2) Signallar Toshkent vaqti bilan soat 11:00 dan 00:00 gacha yuboriladi.\n"
@@ -17,7 +18,6 @@ no_lang = {
                           "4) 100% Take profitlar o’linishi kafolati.\n"
                           "5) Risk va money management sistemasi.\n\n"
                           "📉📈 Signal effektivligi bir-qancha strategiyalar birlashmasi, texnik va fundamental tahlilarga asoslanib beriladi.\n",
-
 }
 
 
@@ -28,6 +28,7 @@ uz = {
 
     "main_menu_4": "🗓 Biz haqimizda Ma'lumot.",
     "main_menu_5": "🌐 Til",
+    "main_menu_6": "🆔 MyID",
 
 
     "set_ref": "Referral {} muvofaqqiyatli aktivlashtirildi.",
@@ -58,17 +59,17 @@ uz = {
 
     "ban": "Telegram ID raqamini kiriting",
 
+    "my_id_is": " 🆔 SizningID: <code>{}</code>",
+
     "my_id": "{} sizning ID  raqamingiz 🆔<code>{}</code>\n\n"
-             "ALGO 10 - 10 Kunlik tarifi - 10 USDT (Demo 1 martalik)\n"        
-             "F4U 30 - 30 Kunlik tarifi - 30 USDT (Forex4you)\n"
-             "ALGO 30 - 30 Kunlik tarifi - 200 USDT\n\n"
+             "ALGO GOLD - 30 Kunlik tarifi - 600 000 UZS \n"        
+             "F4U 30 - 30 Kunlik tarifi - 600 000 UZS (Forex4you)\n"
+             "ALGO 30 - 30 Kunlik tarifi - 100 USDT\n\n"
              "❗️Tolov uchun: @Bobur_Mirzo97",
 
-
-    "about_us": "Савдо эксперти сигналлари Market Masters трейдерлари "
-                "томонидан бериб борилади.\n@ALGO_Moderator_bot\n\n"
-                "Алока учун: @Bobur_Mirzo97 @Astrophysicuz",
-
+    "about_us": "Savdo eksperti signallari Market Masters treyderlari "
+                "tomonidan berib boriladi.\n@ALGO_Moderator_bot\n\n"
+                "Aloka uchun: @Bobur_Mirzo97 @Astrophysicuz",
 
     "info_user": "Premium End. . .\n"
                  "User Profile: [User {}](tg://user?id={})\n"
@@ -94,7 +95,7 @@ ru = {
 
  "main_menu_4": "🗓 О нас.",
  "main_menu_5": "🌐 Язык",
-
+ "main_menu_6": "🆔 MyID",
 
  "set_ref": "Реферал {} успешно активирован.",
  "set_language": "выбрано!",
@@ -118,16 +119,18 @@ ru = {
  "warning_join_tariff": "Введен неверный тариф... Введите в формате (тариф 00000000)",
 
  "join": "Введите Telegram ID и тариф\n"
- "алго10 – 10 дней\n"
+ "algogold – 30 дней\n"
  "algo30 – 30 дней:\n"
- "Пример: 1234567890 алгоритм10",
+ "Пример: 1234567890 algogold",
 
  "ban": "Введите идентификатор Telegram",
 
+ "my_id_is": " 🆔 ВашID: <code>{}</code>",
+
  "my_id": "{} — ваш идентификационный номер 🆔<code>{}</code>\n\n"
- "Ставка ALGO 10 – 10 дней — 10 USDT (1 демо-версия)\n"
- "Ставка F4U 30 – 30 дней — 30 USDT (Forex4you)\n"
- "Ставка ALGO 30 – 30 дней — 200 USDT\n\n"
+ "ALGO GOLD – 30 дней — 600 000 UZS \n"
+ "F4U 30 – 30 дней — 600 000 UZS UZS (Forex4you)\n"
+ "ALGO 30 – 30 дней — 100 USDT\n\n"
  "❗️Для выкупа: @Bobur_Mirzo97",
 
 
@@ -158,6 +161,7 @@ en = {
 
  "main_menu_4": "🗓 About Us.",
  "main_menu_5": "🌐 Language",
+ "main_menu_6": "🆔 MyID",
 
 
  "set_ref": "Referral {} successfully activated.",
@@ -171,7 +175,7 @@ en = {
 
  "warning_input": "Sorry, I didn't understand your request. Send the /start command.",
 
- "warning_link": "WARNING!!!!!\this link is one-time \n{}",
+ "warning_link": "WARNING!!!!!\nthis link is one-time \n{}",
 
  "warning_ref": "Referral number not available!",
  "warning_have_ref": "You have a referral!",
@@ -188,10 +192,12 @@ en = {
 
  "ban": "Enter Telegram ID",
 
+ "my_id_is": " 🆔 YourID: <code>{}</code>",
+
  "my_id": "{} is your ID number 🆔<code>{}</code>\n\n"
- "ALGO 10 - 10 Day rate - 10 USDT (Demo 1 time)\n"
- "F4U 30 - 30 Day rate - 30 USDT (Forex4you)\n"
- "ALGO 30 - 30 Day rate - 200 USDT\n\n"
+ "ALGO GOLD - 30 Day rate - 600 000 UZS\n"
+ "F4U 30 - 30 Day rate - 600 000 UZS (Forex4you)\n"
+ "ALGO 30 - 30 Day rate - 100 USDT\n\n"
  "❗️For ransom: @Bobur_Mirzo97",
 
 

@@ -35,19 +35,21 @@ async def main():
     async def review():
         now = timer.get_current_time()
         members = []
-        try:
-            async for member in bot.get_chat_members(const.CHANNEL):
-                members.append(member.user.id)
-        except ValueError as err:
-            return await bot.send_message(const.ADMINS[0], str(err))
+        for CHANNEL in const.CHANNELS:
+            try:
+                async for member in bot.get_chat_members(CHANNEL):
+                    members.append(member.user.id)
+            except ValueError as err:
+                return await bot.send_message(const.ADMINS[0], str(err))
         ids = await user.review_ids(shared.database, str(now))
-        to_ban = set(members) - set(list(sum(ids,())))
+        to_ban = set(members) - set(list(sum(ids, ())))
         for i in to_ban:
             if i not in const.ADMINS:
-                try:
-                    await bot.ban_chat_member(const.CHANNEL, i)
-                except BadRequest as err:
-                    await bot.send_message(const.ADMINS[0], str(err))
+                for CHANNEL in const.CHANNELS:
+                    try:
+                        await bot.ban_chat_member(CHANNEL, i)
+                    except BadRequest as err:
+                        await bot.send_message(const.ADMINS[0], str(err))
         try:
             users = await user.review_subscription(shared.database, str(now))
 

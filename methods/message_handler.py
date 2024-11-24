@@ -74,9 +74,9 @@ async def set_join(current_user, current_lang, bot, msg):
         telegram_id, tariff = msg.text.split(" ")
     except ValueError:
         return await msg.reply_text(current_lang["warning_join"])
-    if tariff == "algo10":
+    if tariff == "algogold":
         await user.update_subscription(shared.database, int(telegram_id), current_user.telegram_id,
-                                       timer.get_current_time(), timer.get_end_time(10))
+                                       timer.get_current_time(), timer.get_end_time(30))
     elif tariff == "algo30":
         await user.update_subscription(shared.database, int(telegram_id), current_user.telegram_id,
                                        timer.get_current_time(), timer.get_end_time(30))
@@ -86,7 +86,8 @@ async def set_join(current_user, current_lang, bot, msg):
     try:
         await bot.unban_chat_member(const.CHANNEL, int(telegram_id))
     except BadRequest as err:
-        return await msg.reply_text(str(err))
+        await msg.reply_text(str(err))
+        return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
     link = await bot.create_chat_invite_link(const.CHANNEL, member_limit=1)
     await bot.send_message(int(telegram_id), current_lang['warning_link'].format(link.invite_link))
     return await msg.reply_text(f"{telegram_id} ga {tariff}  muvofaqqiyatli aktivlashtirildi.")
@@ -97,7 +98,8 @@ async def set_ban(current_user, current_lang, bot, msg):
     try:
         await bot.ban_chat_member(const.CHANNEL, int(msg.text))
     except UserAdminInvalid as err:
-        return await msg.reply_text(str(err))
+        await msg.reply_text(str(err))
+        return await bot.send_message(const.ADMINS[0], "message_handler.set_ban: " + str(err))
     else:
         await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
     return await msg.reply_text(current_lang["set_ban"].format(msg.text))
@@ -121,3 +123,7 @@ async def bot_menu_4(current_lang, msg):
 
 async def bot_menu_5(current_user, msg):
     return await set_language(current_user, msg)
+
+
+async def bot_menu_6(current_lang, msg):
+    return await msg.reply_text(str(current_lang["my_id_is"]).format(msg.from_user.id))

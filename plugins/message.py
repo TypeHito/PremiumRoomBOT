@@ -8,8 +8,11 @@ from methods import message_handler
 from utils import lang
 from pyrogram.errors.exceptions.bad_request_400 import UserIsBot
 
+
 @Client.on_message(filters.private & filters.text)
 async def message_text(bot: Client, msg: Message):
+    print(msg.chat.id)
+    print(msg.text)
     try:
         current_user = await user.get_user(shared.database, msg.from_user.id)
     except Exception as err:
@@ -41,6 +44,9 @@ async def message_text(bot: Client, msg: Message):
         elif msg.text == current_lang["main_menu_5"]:
             return await message_handler.bot_menu_5(current_user, msg)
 
+        elif msg.text == current_lang["main_menu_6"]:
+            return await message_handler.bot_menu_6(current_lang, msg)
+
         elif msg.text in lang.no_lang["choice_language"]:
             return await message_handler.update_language(current_user, msg)
 
@@ -48,7 +54,7 @@ async def message_text(bot: Client, msg: Message):
             try:
                 return await message_handler.set_join(current_user, current_lang, bot, msg)
             except UserIsBot as err:
-                return await msg.reply_text(str(err))
+                return await msg.reply_text("message.message_text bot.join:" + str(err))
 
         elif current_user.bot_menu == BotMenu.ban:
             return await message_handler.set_ban(current_user, current_lang, bot, msg)

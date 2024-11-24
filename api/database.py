@@ -42,4 +42,4 @@ async def connection():
 async def re_connection(client, msg, err):
     await msg.reply_text("Keyinroq urinib ko'ring ")
     await connection()
-    await client.send_message(const.ADMINS[0], str(err))
+    await client.send_message(const.ADMINS[0], "database.re_connection: " + str(err))
