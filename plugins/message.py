@@ -11,8 +11,6 @@ from pyrogram.errors.exceptions.bad_request_400 import UserIsBot
 
 @Client.on_message(filters.private & filters.text)
 async def message_text(bot: Client, msg: Message):
-    print(msg.chat.id)
-    print(msg.text)
     try:
         current_user = await user.get_user(shared.database, msg.from_user.id)
     except Exception as err:
@@ -66,6 +64,12 @@ async def message_text(bot: Client, msg: Message):
             return await message_handler.update_language(current_user, msg)
 
     return await msg.reply_text(current_lang["warning_input"])
+
+
+# @Client.on_message(filters.text)
+# async def message_texts(bot: Client, msg: Message):
+#     print(msg.text)
+#     print(msg.chat.id)
 
 
 @Client.on_message(filters.contact)

@@ -77,19 +77,27 @@ async def set_join(current_user, current_lang, bot, msg):
     if tariff == "algogold":
         await user.update_subscription(shared.database, int(telegram_id), current_user.telegram_id,
                                        timer.get_current_time(), timer.get_end_time(30))
+        try:
+            await bot.unban_chat_member(const.CHANNELS[1], int(telegram_id))
+        except BadRequest as err:
+            await msg.reply_text(str(err))
+            return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
+        link = await bot.create_chat_invite_link(const.CHANNELS[1], member_limit=1)
+        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(link.invite_link))
+
     elif tariff == "algo30":
         await user.update_subscription(shared.database, int(telegram_id), current_user.telegram_id,
                                        timer.get_current_time(), timer.get_end_time(30))
+        try:
+            await bot.unban_chat_member(const.CHANNELS[0], int(telegram_id))
+        except BadRequest as err:
+            await msg.reply_text(str(err))
+            return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
+        link = await bot.create_chat_invite_link(const.CHANNELS[0], member_limit=1)
+        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(link.invite_link))
     else:
         return await msg.reply_text(current_lang["warning_join_tariff"])
     await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
-    try:
-        await bot.unban_chat_member(const.CHANNEL, int(telegram_id))
-    except BadRequest as err:
-        await msg.reply_text(str(err))
-        return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
-    link = await bot.create_chat_invite_link(const.CHANNEL, member_limit=1)
-    await bot.send_message(int(telegram_id), current_lang['warning_link'].format(link.invite_link))
     return await msg.reply_text(f"{telegram_id} ga {tariff}  muvofaqqiyatli aktivlashtirildi.")
 
 
