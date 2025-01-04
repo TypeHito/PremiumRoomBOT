@@ -82,8 +82,10 @@ async def set_join(current_user, current_lang, bot, msg):
         except BadRequest as err:
             await msg.reply_text(str(err))
             return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
-        link = await bot.create_chat_invite_link(const.CHANNELS[1], member_limit=1)
-        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(link.invite_link))
+        channel_link = await bot.create_chat_invite_link(const.CHANNELS[1], member_limit=1)
+        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(channel_link.invite_link))
+        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(const.CHAT))
+
 
     elif tariff == "algo30":
         await user.update_subscription(shared.database, int(telegram_id), current_user.telegram_id,
@@ -93,8 +95,9 @@ async def set_join(current_user, current_lang, bot, msg):
         except BadRequest as err:
             await msg.reply_text(str(err))
             return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
-        link = await bot.create_chat_invite_link(const.CHANNELS[0], member_limit=1)
-        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(link.invite_link))
+        channel_link = await bot.create_chat_invite_link(const.CHANNELS[0], member_limit=1)
+        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(channel_link.invite_link))
+        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(const.CHAT))
     else:
         return await msg.reply_text(current_lang["warning_join_tariff"])
     await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
@@ -104,7 +107,9 @@ async def set_join(current_user, current_lang, bot, msg):
 async def set_ban(current_user, current_lang, bot, msg):
     await user.update_subscription_end(shared.database, int(msg.text), current_user.telegram_id)
     try:
-        await bot.ban_chat_member(const.CHANNEL, int(msg.text))
+        for channel in range(len(const.CHANNELS)):
+            await bot.ban_chat_member(const.CHANNELS[channel], int(msg.text))
+        await bot.ban_chat_member(const.CHAT_ID, int(msg.text))
     except UserAdminInvalid as err:
         await msg.reply_text(str(err))
         return await bot.send_message(const.ADMINS[0], "message_handler.set_ban: " + str(err))

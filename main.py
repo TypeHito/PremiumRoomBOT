@@ -1,3 +1,4 @@
+from methods.command_handler import command_start
 from models import shared, Settings
 from pyrogram.errors.exceptions.bad_request_400 import BadRequest
 from pyrogram.errors.exceptions.bad_request_400 import UserIsBot
@@ -58,7 +59,10 @@ async def main():
         else:
             for i in users:
                 await user.update_subscription_end(shared.database, i[1], 0, str(now))
-                await bot.ban_chat_member(const.CHANNEL, i[1])
+                await bot.ban_chat_member(const.CHAT_ID, i[1])
+                for channel in range(len(const.CHANNELS)):
+                    await bot.ban_chat_member(const.CHANNELS[channel], i[1])
+
 
     scheduler = AsyncIOScheduler()
     scheduler.add_job(review, "interval", seconds=const.interval)
