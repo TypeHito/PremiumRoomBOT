@@ -79,6 +79,7 @@ async def set_join(current_user, current_lang, bot, msg):
                                        timer.get_current_time(), timer.get_end_time(30))
         try:
             await bot.unban_chat_member(const.CHANNELS[1], int(telegram_id))
+            await bot.unban_chat_member(const.CHAT_ID, int(telegram_id))
         except BadRequest as err:
             await msg.reply_text(str(err))
             return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
@@ -92,6 +93,7 @@ async def set_join(current_user, current_lang, bot, msg):
                                        timer.get_current_time(), timer.get_end_time(30))
         try:
             await bot.unban_chat_member(const.CHANNELS[0], int(telegram_id))
+            await bot.unban_chat_member(const.CHAT_ID, int(telegram_id))
         except BadRequest as err:
             await msg.reply_text(str(err))
             return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
