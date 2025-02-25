@@ -4,6 +4,9 @@ no_lang = {
     "warning_lang": "Incorrect language, please, choose one of button\n"
                     "Неверный язык, пожалуйста, выберите одну из кнопок\n"
                     "Noto'g'ri til, iltimos, tugmalaridan birini tanlang",
+    "end_time": "Your subscription has ended.\n"
+                "Ваша подписка закончена.\n"
+                "Obunangiz tugadi.",
 
     "send_start_info": "Algo signal kanalga qo’shilish uchun, quyidagilarni bajargan bo’lishiz kerak:\n"
                        "1. https://www.forex4you.com/?affid=wwwpft1 ro’yxatdan o’tib, verifikatsiyadanxan o’tishiz kerak.\n"
@@ -53,9 +56,9 @@ uz = {
     "warning_join_tariff": "Tarif notogri kiritildi . . . (00000000 tariff) formatda kiriting",
 
     "join": "Telegram ID raqamini va tarifni kirinig\n"
-            "algo10 - 10 kun\n"
+            "algogold - 30 kun\n"
             "algo30 - 30 kun:\n"
-            "Misol: 1234567890 algo10",
+            "Misol: 1234567890 algo30",
 
     "ban": "Telegram ID raqamini kiriting",
 
@@ -65,11 +68,11 @@ uz = {
              "ALGO GOLD - 30 Kunlik tarifi - 600 000 UZS \n"        
              "F4U 30 - 30 Kunlik tarifi - 600 000 UZS (Forex4you)\n"
              "ALGO 30 - 30 Kunlik tarifi - 100 USDT\n\n"
-             "❗️Tolov uchun: @Bobur_Mirzo97",
+             "❗️Tolov uchun: @Islombek_ASTRO",
 
     "about_us": "Savdo eksperti signallari Market Masters treyderlari "
                 "tomonidan berib boriladi.\n@ALGO_Moderator_bot\n\n"
-                "Aloka uchun: @Bobur_Mirzo97 @Astrophysicuz",
+                "Aloka uchun: @Islombek_ASTRO @Islombek_ASTRO",
 
     "info_user": "Premium End. . .\n"
                  "User Profile: [User {}](tg://user?id={})\n"
@@ -131,12 +134,12 @@ ru = {
  "ALGO GOLD – 30 дней — 600 000 UZS \n"
  "F4U 30 – 30 дней — 600 000 UZS UZS (Forex4you)\n"
  "ALGO 30 – 30 дней — 100 USDT\n\n"
- "❗️Для выкупа: @Bobur_Mirzo97",
+ "❗️Для выкупа: @Islombek_ASTRO",
 
 
  "about_us": "Торговые экспертные сигналы Мастера рынка Трейдеры"
  "предоставлен.\n@ALGO_Moderator_bot\n\n"
- "Контакт: @Bobur_Mirzo97 @Astrophysicalcuz",
+ "Контакт: @Islombek_ASTRO @Astrophysicalcuz",
 
 
  "info_user": "Премиум-конец...\n"
@@ -186,9 +189,9 @@ en = {
  "warning_join_tariff": "Invalid tariff entered . . . Enter in format (00000000 tariff)",
 
  "join": "Enter Telegram ID and tariff\n"
- "algo10 - 10 days\n"
+ "algogold - 30 days\n"
  "algo30 - 30 days:\n"
- "Example: 1234567890 algo10",
+ "Example: 1234567890 algo30",
 
  "ban": "Enter Telegram ID",
 
@@ -198,12 +201,12 @@ en = {
  "ALGO GOLD - 30 Day rate - 600 000 UZS\n"
  "F4U 30 - 30 Day rate - 600 000 UZS (Forex4you)\n"
  "ALGO 30 - 30 Day rate - 100 USDT\n\n"
- "❗️For ransom: @Bobur_Mirzo97",
+ "❗️For ransom: @Islombek_ASTRO",
 
 
  "about_us": "Trade Expert Signals Market Masters Traders "
  "provided by.\n@ALGO_Moderator_bot\n\n"
- "Contact: @Bobur_Mirzo97 @Astrophysicuz",
+ "Contact: @Islombek_ASTRO @Astrophysicuz",
 
 
  "info_user": "Premium End. . .\n"

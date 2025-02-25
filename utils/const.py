@@ -31,7 +31,7 @@ CHANNELS = [-1002175843444, -1002376349132] # ALGO MM UZ CHANNEL, #GOLD CHANNEL 
 
 CHAT = "https://t.me/+z3jO8oag1xEyMzhi" # #Algochat #Test Channel #carvonuz,
 # CHAT_ID = 2340181808 # #Algochat #Test Channel #carvonuz,
-CHAT_ID = "-1002340181808" # #Algochat #Test Channel #carvonuz,
+CHAT_ID = "-1002340181808" # #Algochat
 
 
 

@@ -10,6 +10,7 @@ from api import connection, initial, uninstall
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from methods import user, timer
 from utils import lang
+from utils.lang import no_lang
 
 
 async def main():
@@ -60,6 +61,8 @@ async def main():
             for i in users:
                 await user.update_subscription_end(shared.database, i[1], 0, str(now))
                 await bot.ban_chat_member(const.CHAT_ID, i[1])
+                await bot.send_message(i[1],  no_lang["end_time"])
+
                 for channel in range(len(const.CHANNELS)):
                     await bot.ban_chat_member(const.CHANNELS[channel], i[1])
 

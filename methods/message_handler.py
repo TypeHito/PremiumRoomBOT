@@ -5,7 +5,7 @@ from methods import user
 from models.bot_menu import BotMenu
 from utils import const
 from utils import lang
-from pyrogram.errors.exceptions.bad_request_400 import UserAdminInvalid, BadRequest
+from pyrogram.errors.exceptions.bad_request_400 import UserAdminInvalid, BadRequest, PeerIdInvalid
 
 
 async def set_ref(current_user, current_lang, msg):
@@ -95,7 +95,7 @@ async def set_join(current_user, current_lang, bot, msg):
             await bot.unban_chat_member(const.CHANNELS[0], int(telegram_id))
             await bot.unban_chat_member(const.CHAT_ID, int(telegram_id))
         except BadRequest as err:
-            await msg.reply_text(str(err))
+            await msg.reply_text(str(err)+"bad request from algo30")
             return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
         channel_link = await bot.create_chat_invite_link(const.CHANNELS[0], member_limit=1)
         await bot.send_message(int(telegram_id), current_lang['warning_link'].format(channel_link.invite_link))
@@ -110,13 +110,22 @@ async def set_ban(current_user, current_lang, bot, msg):
     await user.update_subscription_end(shared.database, int(msg.text), current_user.telegram_id)
     try:
         for channel in range(len(const.CHANNELS)):
-            await bot.ban_chat_member(const.CHANNELS[channel], int(msg.text))
-        await bot.ban_chat_member(const.CHAT_ID, int(msg.text))
+            try:
+                await bot.ban_chat_member(const.CHANNELS[channel], int(msg.text))
+            except ValueError as err:
+                await bot.send_message(const.ADMINS[0], str(err))
+
+        await bot.send_message(int(msg.text),  lang.no_lang["end_time"])
+        try:
+            await bot.ban_chat_member(const.CHAT_ID, int(msg.text))
+        except PeerIdInvalid as err:
+            return msg.reply_text(str(err))
     except UserAdminInvalid as err:
         await msg.reply_text(str(err))
         return await bot.send_message(const.ADMINS[0], "message_handler.set_ban: " + str(err))
     else:
         await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
+
     return await msg.reply_text(current_lang["set_ban"].format(msg.text))
 
 
