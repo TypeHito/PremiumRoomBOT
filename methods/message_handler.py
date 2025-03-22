@@ -86,6 +86,7 @@ async def set_join(current_user, current_lang, bot, msg):
         channel_link = await bot.create_chat_invite_link(const.CHANNELS[1], member_limit=1)
         await bot.send_message(int(telegram_id), current_lang['warning_link'].format(channel_link.invite_link))
         await bot.send_message(int(telegram_id), current_lang['warning_link'].format(const.CHAT))
+        await bot.send_message(int(telegram_id), "https://telegra.ph/Signallar-haqida-tushuncha-03-12")
 
 
     elif tariff == "algo30":
@@ -100,6 +101,7 @@ async def set_join(current_user, current_lang, bot, msg):
         channel_link = await bot.create_chat_invite_link(const.CHANNELS[0], member_limit=1)
         await bot.send_message(int(telegram_id), current_lang['warning_link'].format(channel_link.invite_link))
         await bot.send_message(int(telegram_id), current_lang['warning_link'].format(const.CHAT))
+        await bot.send_message(int(telegram_id), "https://telegra.ph/Signallar-haqida-tushuncha-03-12")
     else:
         return await msg.reply_text(current_lang["warning_join_tariff"])
     await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
