@@ -102,6 +102,21 @@ async def set_join(current_user, current_lang, bot, msg):
         await bot.send_message(int(telegram_id), current_lang['warning_link'].format(channel_link.invite_link))
         await bot.send_message(int(telegram_id), current_lang['warning_link'].format(const.CHAT))
         await bot.send_message(int(telegram_id), "https://telegra.ph/Signallar-haqida-tushuncha-03-12")
+
+    elif tariff == "algo":
+        await user.update_subscription(shared.database, int(telegram_id), current_user.telegram_id,
+                                       timer.get_current_time(), timer.get_end_time(30))
+        try:
+            await bot.unban_chat_member(const.CHANNELS[2], int(telegram_id))
+            await bot.unban_chat_member(const.CHAT_ID, int(telegram_id))
+        except BadRequest as err:
+            await msg.reply_text(str(err)+"bad request from algo")
+            return await bot.send_message(const.ADMINS[0], "message_handler.set_join: " + str(err))
+        channel_link = await bot.create_chat_invite_link(const.CHANNELS[2], member_limit=1)
+        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(channel_link.invite_link))
+        await bot.send_message(int(telegram_id), current_lang['warning_link'].format(const.CHAT))
+        await bot.send_message(int(telegram_id), "https://telegra.ph/Signallar-haqida-tushuncha-03-12")
+
     else:
         return await msg.reply_text(current_lang["warning_join_tariff"])
     await user.update_bot_menu(shared.database, current_user.telegram_id, BotMenu.delete)
