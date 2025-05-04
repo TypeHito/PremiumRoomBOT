@@ -16,7 +16,7 @@ APP_NAME = "RoomBOT"       # Server
 API_ID = 29158567                                       # me
 API_HASH = "4658fe88a5978ce5c572b2f8faa6049d"           # me
 # BOT_TOKEN = "6100275561:AAF4LDysmEXcBATHjJ5vaqxlFppQ8fxQWdc"     # @MotherInfoBot #Dev
-BOT_TOKEN = "7139525433:AAF6jeznvPiga03IfLLvaXAC2N83c2VYxAo"   # ALGO MM
+BOT_TOKEN = "7139525433:AAEsmVD_YHbViNnZ6Xw-r5AdOt422X98bIM"   # ALGO MM
 
 
 PROVIDER_TOKEN_TEST = "371317599:TEST:1715399177347"  # ALGO MM
