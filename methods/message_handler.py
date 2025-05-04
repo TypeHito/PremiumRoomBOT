@@ -103,7 +103,7 @@ async def set_join(current_user, current_lang, bot, msg):
         await bot.send_message(int(telegram_id), current_lang['warning_link'].format(const.CHAT))
         await bot.send_message(int(telegram_id), "https://telegra.ph/Signallar-haqida-tushuncha-03-12")
 
-    elif tariff == "algo":
+    elif tariff == "algovip":
         await user.update_subscription(shared.database, int(telegram_id), current_user.telegram_id,
                                        timer.get_current_time(), timer.get_end_time(30))
         try:

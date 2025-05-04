@@ -58,6 +58,7 @@ uz = {
     "join": "Telegram ID raqamini va tarifni kirinig\n"
             "algogold - 30 kun\n"
             "algo30 - 30 kun:\n"
+            "algovip - 30 kun:\n"
             "Misol: 1234567890 algo30",
 
     "ban": "Telegram ID raqamini kiriting",
@@ -65,8 +66,8 @@ uz = {
     "my_id_is": " 🆔 SizningID: <code>{}</code>",
 
     "my_id": "{} sizning ID  raqamingiz 🆔<code>{}</code>\n\n"
-             "ALGO GOLD - 30 Kunlik tarifi - 600 000 UZS \n"        
-             "F4U 30 - 30 Kunlik tarifi - 600 000 UZS (Forex4you)\n"
+             "ALGO GOLD - 30 Kunlik tarifi - 80 USDT \n"        
+             "F4U 30 - 30 Kunlik tarifi - 80 USDT (forex4you)\n"
              "ALGO 30 - 30 Kunlik tarifi - 100 USDT\n\n"
              "❗️Tolov uchun: @Islombek_ASTRO",
 
@@ -131,8 +132,8 @@ ru = {
  "my_id_is": " 🆔 ВашID: <code>{}</code>",
 
  "my_id": "{} — ваш идентификационный номер 🆔<code>{}</code>\n\n"
- "ALGO GOLD – 30 дней — 600 000 UZS \n"
- "F4U 30 – 30 дней — 600 000 UZS UZS (Forex4you)\n"
+ "ALGO GOLD – 30 дней — 80 USDT \n"
+ "F4U 30 – 30 дней — 80 USDT UZS (Forex4you)\n"
  "ALGO 30 – 30 дней — 100 USDT\n\n"
  "❗️Для выкупа: @Islombek_ASTRO",
 
@@ -198,8 +199,8 @@ en = {
  "my_id_is": " 🆔 YourID: <code>{}</code>",
 
  "my_id": "{} is your ID number 🆔<code>{}</code>\n\n"
- "ALGO GOLD - 30 Day rate - 600 000 UZS\n"
- "F4U 30 - 30 Day rate - 600 000 UZS (Forex4you)\n"
+ "ALGO GOLD - 30 Day rate - 80 USDT\n"
+ "F4U 30 - 30 Day rate - 80 USDT (forex4you)\n"
  "ALGO 30 - 30 Day rate - 100 USDT\n\n"
  "❗️For ransom: @Islombek_ASTRO",
 
